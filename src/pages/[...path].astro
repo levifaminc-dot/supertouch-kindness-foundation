@@ -2,6 +2,7 @@
 import {load} from 'cheerio';
 import {pageContent,vacancies} from '../lib/content';
 import Vacancies from '../components/Vacancies.astro';
+import '../styles/tailwind.css';
 const templates=import.meta.glob('../templates/*.html',{query:'?raw',import:'default',eager:true}) as Record<string,string>;
 const route='/'+(Astro.params.path?Astro.params.path.replace(/\/$/,'')+'/':'');
 const name=Astro.params.path?.replace(/\/$/,'').replaceAll('/','-')||'home';

@@ -2,6 +2,10 @@
 
 Astro website with Sanity content and Microsoft SharePoint recruitment storage. The original private Sites version remains available during migration.
 
+## Frontend architecture
+
+Astro renders the website and fetches published content from Sanity. Tailwind CSS v4 is installed through its Vite plugin, with foundation colors defined in `src/styles/tailwind.css`. The vacancy cards are Astro markup styled with Tailwind utilities. Imported HTML templates and their CSS remain for the other sections while those sections are migrated into reusable Astro components. Tailwind Preflight is omitted so it does not reset the existing templates. New or redesigned sections should use Astro components and Tailwind utilities rather than adding to the imported stylesheets.
+
 ## Run locally
 
 Use Node 22.12+ and `npm ci`. Copy `.env.example` to `.env.local` and set the account specific values. `npm run dev` starts the website; `npm run studio:dev` starts the Sanity editor. `npm run build` checks the Vercel build.

@@ -1,0 +1,13 @@
+/* Legacy page styles remain in place while pages move into Astro components. */
+/* Omit Preflight so Tailwind does not reset the imported site markup. */
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --color-skf-ink: #102e43;
+  --color-skf-blue: #07548a;
+  --color-skf-muted: #596c79;
+  --color-skf-line: #dce5eb;
+  --color-skf-pale: #f1f7fb;
+}

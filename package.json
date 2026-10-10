@@ -1,8 +1,39 @@
 {
-  "name": "supertouch-kindness-foundation", "version": "1.0.0", "private": true, "type": "module",
-  "engines": {"node": ">=22.12.0"},
-  "scripts": {"dev":"astro dev --host 127.0.0.1", "build":"astro build", "check":"astro check", "test":"node --experimental-strip-types --test tests/*.test.ts", "studio:dev":"sanity dev --host 127.0.0.1", "studio:build":"sanity build studio-dist", "content:seed":"node scripts/seed-sanity.mjs"},
-  "dependencies": {"astro":"7.3.8", "@astrojs/vercel":"11.0.13", "@sanity/client":"8.9.0", "@portabletext/to-html":"6.0.0", "cheerio":"1.2.0", "sanity":"6.18.0", "react":"19.3.0", "react-dom":"19.3.0", "styled-components":"6.5.3"},
-  "optionalDependencies":{"@rolldown/binding-linux-x64-gnu":"1.2.13"},
-  "devDependencies":{"@astrojs/check":"0.9.10", "typescript":"6.0.3", "@types/node":"26.6.5"}
+  "name": "supertouch-kindness-foundation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "check": "astro check",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "studio:dev": "sanity dev --host 127.0.0.1",
+    "studio:build": "sanity build studio-dist",
+    "content:seed": "node scripts/seed-sanity.mjs"
+  },
+  "dependencies": {
+    "@astrojs/vercel": "11.0.13",
+    "@portabletext/to-html": "6.0.0",
+    "@sanity/client": "8.9.0",
+    "astro": "7.3.8",
+    "cheerio": "1.2.0",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sanity": "6.18.0",
+    "styled-components": "6.5.3"
+  },
+  "optionalDependencies": {
+    "@rolldown/binding-linux-x64-gnu": "1.2.13"
+  },
+  "devDependencies": {
+    "@astrojs/check": "0.9.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "26.6.5",
+    "tailwindcss": "^4.3.3",
+    "typescript": "6.0.3"
+  }
 }
