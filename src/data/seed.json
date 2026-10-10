@@ -1,0 +1,1339 @@
+[
+  {
+    "_id": "page-home",
+    "_type": "page",
+    "title": "SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "Humanitarian Aid & Community Development",
+        "text": "Humanitarian Aid & Community Development"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "Supertouch Kindness Foundation (SKF), is a Human right and disability ",
+        "text": "Supertouch Kindness Foundation (SKF), is a Human right and disability rights non – governmental organization. A beacon of hope in  Nigeria and beyond."
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "To contribute to improving the living standardof the vulnerable commun",
+        "text": "To contribute to improving the living standardof the vulnerable communities throughcommunity mobilization, capacity building, advocacy & strengthening of institutions at thegrassroots level."
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "Join  SKF to create inclusive society characterised by Peace, Health, ",
+        "text": "Join  SKF to create inclusive society characterised by Peace, Health, Education,and equal opportunities for all, regardless oftheir abilities or disabilities."
+      },
+      {
+        "_key": "text-4",
+        "_type": "textBlock",
+        "label": "If you’re interested in supporting the impactful work of the Supertouc",
+        "text": "If you’re interested in supporting the impactful work of the Supertouch Kindness Foundation, consider making a donation today."
+      },
+      {
+        "_key": "text-5",
+        "_type": "textBlock",
+        "label": "Who we are",
+        "text": "Who we are"
+      },
+      {
+        "_key": "text-6",
+        "_type": "textBlock",
+        "label": "We are Human Right and Disability Right Focus Organisation",
+        "text": "We are Human Right and Disability Right Focus Organisation"
+      },
+      {
+        "_key": "text-7",
+        "_type": "textBlock",
+        "label": "Supertouch Kindness Foundation (SKF), is a Human right and disability ",
+        "text": "Supertouch Kindness Foundation (SKF), is a Human right and disability rights non – governmental organization. A beacon of hope in Nigeria and beyond. We are not just an organization; we are a movement dedicated to empowering and uplifting the Underprivileged. At SKF, we recognize that true transformation is driven by acts of kindness and boundless empathy. Our aim is to create a profound and durable impact on the lives of the less privileged."
+      },
+      {
+        "_key": "text-8",
+        "_type": "textBlock",
+        "label": "Through direct interventions and community-driven projects, Supertouch",
+        "text": "Through direct interventions and community-driven projects, Supertouch Kindness Foundation is making a measurable difference in the lives of the vulnerable across North-East Nigeria."
+      },
+      {
+        "_key": "text-9",
+        "_type": "textBlock",
+        "label": "From Awareness to Action — Making a Difference Where It Matters",
+        "text": "From Awareness to Action — Making a Difference Where It Matters"
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "With a team of dedicated professionals and over a decade of combined f",
+        "text": "With a team of dedicated professionals and over a decade of combined field experience, Supertouch Kindness Foundation designs and delivers solutions that meet the real needs of underserved communities across North-East Nigeria."
+      },
+      {
+        "_key": "text-11",
+        "_type": "textBlock",
+        "label": "We championed disability rights, empowering persons with disabilities ",
+        "text": "We championed disability rights, empowering persons with disabilities through awareness and access to essential services."
+      },
+      {
+        "_key": "text-12",
+        "_type": "textBlock",
+        "label": "In partnership with JONAPWD, we engaged communities in critical discus",
+        "text": "In partnership with JONAPWD, we engaged communities in critical discussions on gender-based violence and accessible support systems."
+      },
+      {
+        "_key": "text-13",
+        "_type": "textBlock",
+        "label": "We led advocacy efforts, awareness campaigns, and community mobilizati",
+        "text": "We led advocacy efforts, awareness campaigns, and community mobilization to stand against gender-based violence."
+      },
+      {
+        "_key": "text-14",
+        "_type": "textBlock",
+        "label": "SKF distributed dignity kits with essential hygiene items to ensure wo",
+        "text": "SKF distributed dignity kits with essential hygiene items to ensure women and girls maintain their well-being in crisis-affected areas."
+      },
+      {
+        "_key": "text-15",
+        "_type": "textBlock",
+        "label": "Women and girls with disabilities learned how to advocate for their se",
+        "text": "Women and girls with disabilities learned how to advocate for their sexual and reproductive health rights in this interactive workshop."
+      },
+      {
+        "_key": "text-16",
+        "_type": "textBlock",
+        "label": "SKF provided MHPSS training and counseling to help individuals cope wi",
+        "text": "SKF provided MHPSS training and counseling to help individuals cope with trauma, stress, and emotional well-being challenges."
+      },
+      {
+        "_key": "text-17",
+        "_type": "textBlock",
+        "label": "What we do",
+        "text": "What we do"
+      },
+      {
+        "_key": "text-18",
+        "_type": "textBlock",
+        "label": "Thematic Areas",
+        "text": "Thematic Areas"
+      },
+      {
+        "_key": "text-19",
+        "_type": "textBlock",
+        "label": "Our work is built around core thematic areas designed to meet urgent n",
+        "text": "Our work is built around core thematic areas designed to meet urgent needs and foster long-term impact. From health and protection to empowerment and advocacy, each area reflects our commitment to inclusive, community-led development."
+      },
+      {
+        "_key": "text-20",
+        "_type": "textBlock",
+        "label": "We advocate for the rights and inclusion of people with disabilities, ",
+        "text": "We advocate for the rights and inclusion of people with disabilities, ensuring their voices are heard and needs are addressed in all community initiatives."
+      },
+      {
+        "_key": "text-21",
+        "_type": "textBlock",
+        "label": "Our protection programs focus on supporting survivors of gender-based ",
+        "text": "Our protection programs focus on supporting survivors of gender-based violence (GBV), mental health and psychosocial support (MHPSS), and mine action awareness"
+      },
+      {
+        "_key": "text-22",
+        "_type": "textBlock",
+        "label": "We provide basic healthcare services referrals, hygiene education, and",
+        "text": "We provide basic healthcare services referrals, hygiene education, and SRH awareness — especially in hard-to-reach communities with limited access to medical support."
+      },
+      {
+        "_key": "text-23",
+        "_type": "textBlock",
+        "label": "We promote access to quality education for children, youth, and women,",
+        "text": "We promote access to quality education for children, youth, and women, and empower communities with knowledge through awareness campaigns and training."
+      },
+      {
+        "_key": "text-24",
+        "_type": "textBlock",
+        "label": "We engage in environmental cleanup, water access projects, and communi",
+        "text": "We engage in environmental cleanup, water access projects, and community sensitization on disaster preparedness and environmental sustainability."
+      },
+      {
+        "_key": "text-25",
+        "_type": "textBlock",
+        "label": "We strengthen grassroots participation, promote transparency, and work",
+        "text": "We strengthen grassroots participation, promote transparency, and work with local institutions to ensure responsive governance that meets community needs."
+      },
+      {
+        "_key": "text-26",
+        "_type": "textBlock",
+        "label": "Join Us in Creating Change That Matters",
+        "text": "Join Us in Creating Change That Matters"
+      },
+      {
+        "_key": "text-27",
+        "_type": "textBlock",
+        "label": "Whether you’re a donor, volunteer, partner, or simply someone who care",
+        "text": "Whether you’re a donor, volunteer, partner, or simply someone who cares — your support helps us bring hope, healing, and opportunity to vulnerable communities across Nigeria."
+      },
+      {
+        "_key": "text-28",
+        "_type": "textBlock",
+        "label": "Whether you’re a donor, volunteer, partner, or simply someone who care",
+        "text": "Whether you’re a donor, volunteer, partner, or simply someone who cares — your support helps us bring hope, healing, and opportunity to vulnerable communities across Nigeria."
+      },
+      {
+        "_key": "text-29",
+        "_type": "textBlock",
+        "label": "How we work",
+        "text": "How we work"
+      },
+      {
+        "_key": "text-30",
+        "_type": "textBlock",
+        "label": "How We Work With Communities",
+        "text": "How We Work With Communities"
+      },
+      {
+        "_key": "text-31",
+        "_type": "textBlock",
+        "label": "We take a grassroots approach, working directly with local leaders, vo",
+        "text": "We take a grassroots approach, working directly with local leaders, volunteers, and organizations to co-create sustainable solutions. Our model focuses on community engagement, capacity building, and inclusive development to ensure lasting impact."
+      },
+      {
+        "_key": "text-32",
+        "_type": "textBlock",
+        "label": "Community Engagement & Needs Assessment",
+        "text": "Community Engagement & Needs Assessment"
+      },
+      {
+        "_key": "text-33",
+        "_type": "textBlock",
+        "label": "We start by listening — working closely with community members to iden",
+        "text": "We start by listening — working closely with community members to identify their most pressing needs and priorities."
+      },
+      {
+        "_key": "text-34",
+        "_type": "textBlock",
+        "label": "Program Design & Local Partnership",
+        "text": "Program Design & Local Partnership"
+      },
+      {
+        "_key": "text-35",
+        "_type": "textBlock",
+        "label": "Our team co-creates tailored programs with local stakeholders, ensurin",
+        "text": "Our team co-creates tailored programs with local stakeholders, ensuring community ownership and cultural sensitivity."
+      },
+      {
+        "_key": "text-36",
+        "_type": "textBlock",
+        "label": "Implementation & Capacity Building",
+        "text": "Implementation & Capacity Building"
+      },
+      {
+        "_key": "text-37",
+        "_type": "textBlock",
+        "label": "We deliver services and training on the ground, empowering individuals",
+        "text": "We deliver services and training on the ground, empowering individuals with the skills and tools to improve their own lives."
+      },
+      {
+        "_key": "text-38",
+        "_type": "textBlock",
+        "label": "Monitoring, Evaluation & Sustainability",
+        "text": "Monitoring, Evaluation & Sustainability"
+      },
+      {
+        "_key": "text-39",
+        "_type": "textBlock",
+        "label": "We track progress, adapt where needed, and ensure that impact continue",
+        "text": "We track progress, adapt where needed, and ensure that impact continues long after the project ends."
+      },
+      {
+        "_key": "text-40",
+        "_type": "textBlock",
+        "label": "Partners/Donors",
+        "text": "Partners/Donors"
+      },
+      {
+        "_key": "text-41",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-42",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-43",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-44",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-45",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  },
+  {
+    "_id": "page-about",
+    "_type": "page",
+    "title": "About – SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/about/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "About",
+        "text": "About"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "We are a community-based, non-profit organization working across Niger",
+        "text": "We are a community-based, non-profit organization working across Nigeria to uplift the vulnerable through health, education, protection, and empowerment. Our mission is driven by kindness, inclusion, and a commitment to lasting change."
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "Who we are",
+        "text": "Who we are"
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "Empowering Communities Through Kindness and Inclusion.",
+        "text": "Empowering Communities Through Kindness and Inclusion."
+      },
+      {
+        "_key": "text-4",
+        "_type": "textBlock",
+        "label": "Supertouch Kindness Foundation (SKF). Our mission is etched in the ver",
+        "text": "Supertouch Kindness Foundation (SKF). Our mission is etched in the very fabric of our existence: ‘Empowering and Uplifting the Underprivileged.’ Rooted in Maiduguri, Borno State, Nigeria, SKF is not merely an organization; we are a movement dedicated to creating profound and enduring impacts on the lives of the less privileged."
+      },
+      {
+        "_key": "text-5",
+        "_type": "textBlock",
+        "label": "Vision",
+        "text": "Vision"
+      },
+      {
+        "_key": "text-6",
+        "_type": "textBlock",
+        "label": "SKF envisions an inclusive society\n characterized by Peace, Health, Ed",
+        "text": "SKF envisions an inclusive society\n characterized by Peace, Health, Education,\n and equal opportunities for all, regardless of\n their abilities or disabilities."
+      },
+      {
+        "_key": "text-7",
+        "_type": "textBlock",
+        "label": "Mission",
+        "text": "Mission"
+      },
+      {
+        "_key": "text-8",
+        "_type": "textBlock",
+        "label": "To advance well-being, peace, and\n development, through advocacy, buil",
+        "text": "To advance well-being, peace, and\n development, through advocacy, building of\n capacities, and providing humanitarian aid\n where it is most needed.\" including the rights\n and well-being of people with disabilities."
+      },
+      {
+        "_key": "text-9",
+        "_type": "textBlock",
+        "label": "Goal",
+        "text": "Goal"
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "To contribute to improving the living standard\n of the vulnerable comm",
+        "text": "To contribute to improving the living standard\n of the vulnerable communities through community mobilization, capacity building,\n advocacy & strengthening of institutions at the grassroots."
+      },
+      {
+        "_key": "text-11",
+        "_type": "textBlock",
+        "label": "Through direct interventions and community-driven projects, Supertouch",
+        "text": "Through direct interventions and community-driven projects, Supertouch Kindness Foundation is making a measurable difference in the lives of the vulnerable across North-East Nigeria."
+      },
+      {
+        "_key": "text-12",
+        "_type": "textBlock",
+        "label": "What we do",
+        "text": "What we do"
+      },
+      {
+        "_key": "text-13",
+        "_type": "textBlock",
+        "label": "Thematic Areas",
+        "text": "Thematic Areas"
+      },
+      {
+        "_key": "text-14",
+        "_type": "textBlock",
+        "label": "Our work is built around core thematic areas designed to meet urgent n",
+        "text": "Our work is built around core thematic areas designed to meet urgent needs and foster long-term impact. From health and protection to empowerment and advocacy, each area reflects our commitment to inclusive, community-led development."
+      },
+      {
+        "_key": "text-15",
+        "_type": "textBlock",
+        "label": "We advocate for the rights and inclusion of people with disabilities, ",
+        "text": "We advocate for the rights and inclusion of people with disabilities, ensuring their voices are heard and needs are addressed in all community initiatives."
+      },
+      {
+        "_key": "text-16",
+        "_type": "textBlock",
+        "label": "Our protection programs focus on supporting survivors of gender-based ",
+        "text": "Our protection programs focus on supporting survivors of gender-based violence (GBV), mental health and psychosocial support (MHPSS), and mine action awareness"
+      },
+      {
+        "_key": "text-17",
+        "_type": "textBlock",
+        "label": "We provide basic healthcare services referrals, hygiene education, and",
+        "text": "We provide basic healthcare services referrals, hygiene education, and SRH awareness — especially in hard-to-reach communities with limited access to medical support."
+      },
+      {
+        "_key": "text-18",
+        "_type": "textBlock",
+        "label": "We promote access to quality education for children, youth, and women,",
+        "text": "We promote access to quality education for children, youth, and women, and empower communities with knowledge through awareness campaigns and training."
+      },
+      {
+        "_key": "text-19",
+        "_type": "textBlock",
+        "label": "We engage in environmental cleanup, water access projects, and communi",
+        "text": "We engage in environmental cleanup, water access projects, and community sensitization on disaster preparedness and environmental sustainability."
+      },
+      {
+        "_key": "text-20",
+        "_type": "textBlock",
+        "label": "We strengthen grassroots participation, promote transparency, and work",
+        "text": "We strengthen grassroots participation, promote transparency, and work with local institutions to ensure responsive governance that meets community needs."
+      },
+      {
+        "_key": "text-21",
+        "_type": "textBlock",
+        "label": "Partners/Donors",
+        "text": "Partners/Donors"
+      },
+      {
+        "_key": "text-22",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-23",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-24",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-25",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-26",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  },
+  {
+    "_id": "page-our-work",
+    "_type": "page",
+    "title": "Our Work – SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/our-work/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "Our Work",
+        "text": "Our Work"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "From mental health support to disability inclusion, our work transform",
+        "text": "From mental health support to disability inclusion, our work transforms lives across Nigeria’s most vulnerable communities."
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "Our Work",
+        "text": "Our Work"
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "Community-Centered Interventions That Drive Lasting Change",
+        "text": "Community-Centered Interventions That Drive Lasting Change"
+      },
+      {
+        "_key": "text-4",
+        "_type": "textBlock",
+        "label": "Supertouch Kindness Foundation (SKF) began its journey in 2020, rooted",
+        "text": "Supertouch Kindness Foundation (SKF) began its journey in 2020, rooted in the heart of Maiduguri, Borno State, at a time when communities were overwhelmed by conflict, displacement, and vulnerability. Our early work centered around mental health and psychosocial support (MHPSS), gender-based violence (GBV) prevention, and access to sexual and reproductive health (SRH) services. We started small — organizing awareness campaigns, distributing dignity kits, and facilitating referrals for GBV survivors in communities like Mairi, Kaleri, and Rann. Our belief was simple: acts of kindness, driven by compassion, can restore dignity and transform lives."
+      },
+      {
+        "_key": "text-5",
+        "_type": "textBlock",
+        "label": "Today, our impact has expanded across six states — Borno, Adamawa, Yob",
+        "text": "Today, our impact has expanded across six states — Borno, Adamawa, Yobe, Taraba, Plateau, and Sokoto — with direct interventions reaching over 34,000 individuals. We’ve empowered women and girls with disabilities to advocate for their rights, trained community-based action teams (COMBATs) to respond to GBV cases, and led capacity-building sessions for service providers, data enumerators, and sign language interpreters. Through collaborative efforts with partners like UNFPA, AUN, RHHF, and CRUDAN, we now lead inclusive humanitarian work that integrates disability rights, youth empowerment, peacebuilding, and community resilience. At SKF, our work is not just about delivering aid — it’s about co-creating sustainable change with the people we serve."
+      },
+      {
+        "_key": "text-6",
+        "_type": "textBlock",
+        "label": "At Supertouch Kindness Foundation, our work is guided by compassion, i",
+        "text": "At Supertouch Kindness Foundation, our work is guided by compassion, inclusion, and the urgent needs of the communities we serve. From our beginnings in Maiduguri to our expansion across North-East Nigeria, we remain committed to empowering vulnerable populations through integrated, people-first solutions."
+      },
+      {
+        "_key": "text-7",
+        "_type": "textBlock",
+        "label": "From Awareness to Action — Making a Difference Where It Matters",
+        "text": "From Awareness to Action — Making a Difference Where It Matters"
+      },
+      {
+        "_key": "text-8",
+        "_type": "textBlock",
+        "label": "With a team of dedicated professionals and over a decade of combined f",
+        "text": "With a team of dedicated professionals and over a decade of combined field experience, Supertouch Kindness Foundation designs and delivers solutions that meet the real needs of underserved communities across North-East Nigeria."
+      },
+      {
+        "_key": "text-9",
+        "_type": "textBlock",
+        "label": "Through our COMBAT volunteer teams, advocacy workshops, and referral n",
+        "text": "Through our COMBAT volunteer teams, advocacy workshops, and referral networks, we are protecting survivors and equipping communities to respond and prevent GBV."
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "We educate women and girls — especially those with disabilities — on m",
+        "text": "We educate women and girls — especially those with disabilities — on menstrual hygiene, family planning, and SRH rights, ensuring access to services in rural and crisis-affected areas."
+      },
+      {
+        "_key": "text-11",
+        "_type": "textBlock",
+        "label": "We provide trauma-informed care, awareness campaigns, and counseling s",
+        "text": "We provide trauma-informed care, awareness campaigns, and counseling services for individuals affected by conflict and displacement — including persons with disabilities."
+      },
+      {
+        "_key": "text-12",
+        "_type": "textBlock",
+        "label": "We promote inclusive policies, train service providers, and work close",
+        "text": "We promote inclusive policies, train service providers, and work closely with disability rights organizations to ensure that persons with disabilities are seen, heard, and supported in every aspect of community life."
+      },
+      {
+        "_key": "text-13",
+        "_type": "textBlock",
+        "label": "We equip COMBAT volunteers, service providers, and even women leaders ",
+        "text": "We equip COMBAT volunteers, service providers, and even women leaders with tools to support GBV survivors, deliver inclusive services, and lead change from within their own communities."
+      },
+      {
+        "_key": "text-14",
+        "_type": "textBlock",
+        "label": "From the 16 Days of Activism to school-based mental health campaigns, ",
+        "text": "From the 16 Days of Activism to school-based mental health campaigns, we raise awareness on GBV, SRH, and disability rights — empowering communities with the knowledge to act."
+      },
+      {
+        "_key": "text-15",
+        "_type": "textBlock",
+        "label": "What they say about us",
+        "text": "What they say about us"
+      },
+      {
+        "_key": "text-16",
+        "_type": "textBlock",
+        "label": "From women and girls with disabilities to grassroots volunteers and lo",
+        "text": "From women and girls with disabilities to grassroots volunteers and local leaders, hear how Supertouch Kindness Foundation is transforming lives across communities in Nigeria."
+      },
+      {
+        "_key": "text-17",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-18",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-19",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-20",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-21",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  },
+  {
+    "_id": "page-our-team",
+    "_type": "page",
+    "title": "Our Team – SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/our-team/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "Our Team",
+        "text": "Our Team"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "About team",
+        "text": "About team"
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "Compassionate Hearts. Professional Hands. Community-Driven Impact.",
+        "text": "Compassionate Hearts. Professional Hands. Community-Driven Impact."
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "At Supertouch Kindness Foundation, our team is made up of child protec",
+        "text": "At Supertouch Kindness Foundation, our team is made up of child protection specialists, health workers, social workers, educators, and dedicated community volunteers. Together, we bring local knowledge, technical expertise, and deep empathy to every project we deliver."
+      },
+      {
+        "_key": "text-4",
+        "_type": "textBlock",
+        "label": "Meet our team",
+        "text": "Meet our team"
+      },
+      {
+        "_key": "text-5",
+        "_type": "textBlock",
+        "label": "It Takes a Team to Transform a Community",
+        "text": "It Takes a Team to Transform a Community"
+      },
+      {
+        "_key": "text-6",
+        "_type": "textBlock",
+        "label": "Executive Director",
+        "text": "Executive Director"
+      },
+      {
+        "_key": "text-7",
+        "_type": "textBlock",
+        "label": "Program & Admin Director",
+        "text": "Program & Admin Director"
+      },
+      {
+        "_key": "text-8",
+        "_type": "textBlock",
+        "label": "HR Officer",
+        "text": "HR Officer"
+      },
+      {
+        "_key": "text-9",
+        "_type": "textBlock",
+        "label": "Finance MAnager",
+        "text": "Finance MAnager"
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "Project Field Officer",
+        "text": "Project Field Officer"
+      },
+      {
+        "_key": "text-11",
+        "_type": "textBlock",
+        "label": "M&E Officer",
+        "text": "M&E Officer"
+      },
+      {
+        "_key": "text-12",
+        "_type": "textBlock",
+        "label": "Field Sec. Officer",
+        "text": "Field Sec. Officer"
+      },
+      {
+        "_key": "text-13",
+        "_type": "textBlock",
+        "label": "HQ Sec. Officer",
+        "text": "HQ Sec. Officer"
+      },
+      {
+        "_key": "text-14",
+        "_type": "textBlock",
+        "label": "Whether you’re a donor, volunteer, partner, or simply someone who care",
+        "text": "Whether you’re a donor, volunteer, partner, or simply someone who cares — your support helps us bring hope, healing, and opportunity to vulnerable communities across Nigeria."
+      },
+      {
+        "_key": "text-15",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-16",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-17",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-18",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-19",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  },
+  {
+    "_id": "page-contact",
+    "_type": "page",
+    "title": "Contact – SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/contact/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "Contact",
+        "text": "Contact"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "We would love to hear from you.",
+        "text": "We would love to hear from you."
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "Get in touch",
+        "text": "Get in touch"
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "Don't hesitate to contact us for more information.",
+        "text": "Don't hesitate to contact us for more information."
+      },
+      {
+        "_key": "text-4",
+        "_type": "textBlock",
+        "label": "92, Opp. A.A. Kime Filling Station Off Lagos Street, Maiduguri, \nBorno",
+        "text": "92, Opp. A.A. Kime Filling Station Off Lagos Street, Maiduguri, \nBorno State, Nigeria"
+      },
+      {
+        "_key": "text-5",
+        "_type": "textBlock",
+        "label": "info@supertouchkindnessfoundation.org \nofficialkind360@gmail.com",
+        "text": "info@supertouchkindnessfoundation.org \nofficialkind360@gmail.com"
+      },
+      {
+        "_key": "text-6",
+        "_type": "textBlock",
+        "label": "+2347031699255\n+2348169126501",
+        "text": "+2347031699255\n+2348169126501"
+      },
+      {
+        "_key": "text-7",
+        "_type": "textBlock",
+        "label": "Send us a message",
+        "text": "Send us a message"
+      },
+      {
+        "_key": "text-8",
+        "_type": "textBlock",
+        "label": "Have a question, suggestion, or want to partner with us? Reach out — w",
+        "text": "Have a question, suggestion, or want to partner with us? Reach out — we’d love to hear from you. Our team will get back to you as soon as possible."
+      },
+      {
+        "_key": "text-9",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-11",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-12",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-13",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  },
+  {
+    "_id": "page-donate",
+    "_type": "page",
+    "title": "Donate – SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/donate/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "Donate",
+        "text": "Donate"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "Donate & Help",
+        "text": "Donate & Help"
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "Transform lives with a single act of kindness. Your donation to Supert",
+        "text": "Transform lives with a single act of kindness. Your donation to Supertouch Kindness Foundation is a powerful investment in positive change. Join us in making a difference – every contribution, big or small, resonates with the promise of empowerment, compassion, and brighter tomorrows. Together, we can create a world where kindness knows no bounds. Make your impact felt; donate today and sow the seeds of a better future."
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "DONATE NOW",
+        "text": "DONATE NOW"
+      },
+      {
+        "_key": "text-4",
+        "_type": "textBlock",
+        "label": "Bank Account Details",
+        "text": "Bank Account Details"
+      },
+      {
+        "_key": "text-5",
+        "_type": "textBlock",
+        "label": "Account Title: Supertouch Kindness Foundation AccountNumber: 008695501",
+        "text": "Account Title: Supertouch Kindness Foundation AccountNumber: 0086955019Branch Code: 232Sort Code: 232060012Branch: MaiduguriName of Bank: Sterling Bank Plc."
+      },
+      {
+        "_key": "text-6",
+        "_type": "textBlock",
+        "label": "Your generous contribution to Supertouch Kindness Foundation directly ",
+        "text": "Your generous contribution to Supertouch Kindness Foundation directly supports our mission to uplift vulnerable communities and create lasting positive change."
+      },
+      {
+        "_key": "text-7",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-8",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-9",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-11",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  },
+  {
+    "_id": "page-impact",
+    "_type": "page",
+    "title": "Impact – SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/impact/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "Impact",
+        "text": "Impact"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "All-Time Data",
+        "text": "All-Time Data"
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "We reach the most vulnerable with inclusive, community-led programs th",
+        "text": "We reach the most vulnerable with inclusive, community-led programs that promote health, dignity, and resilience — impacting over 34,000 lives across Nigeria since 2022."
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "STRENGTHENING DISABILITY INCLUSION-GBV RESPONSES, MITIGATION AND SRH S",
+        "text": "STRENGTHENING DISABILITY INCLUSION-GBV RESPONSES, MITIGATION AND SRH SERVICES THROUGH COMMUNITY BASED ACTION TEAM (COMBAT) IN MICHIKA, MUBI NORTH AND HONG LGAS OF ADAMAWA STATE"
+      },
+      {
+        "_key": "text-4",
+        "_type": "textBlock",
+        "label": "Senssitization and Awareness",
+        "text": "Senssitization and Awareness"
+      },
+      {
+        "_key": "text-6",
+        "_type": "textBlock",
+        "label": "Past Projects",
+        "text": "Past Projects"
+      },
+      {
+        "_key": "text-8",
+        "_type": "textBlock",
+        "label": "Item content. Click the edit button to change this text.",
+        "text": "Item content. Click the edit button to change this text."
+      },
+      {
+        "_key": "text-9",
+        "_type": "textBlock",
+        "label": "2024",
+        "text": "2024"
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "Rann, Kala-Balge, Borno",
+        "text": "Rann, Kala-Balge, Borno"
+      },
+      {
+        "_key": "text-12",
+        "_type": "textBlock",
+        "label": "Item content. Click the edit button to change this text.",
+        "text": "Item content. Click the edit button to change this text."
+      },
+      {
+        "_key": "text-13",
+        "_type": "textBlock",
+        "label": "2024",
+        "text": "2024"
+      },
+      {
+        "_key": "text-14",
+        "_type": "textBlock",
+        "label": "Rann, Kala-Balge, Borno",
+        "text": "Rann, Kala-Balge, Borno"
+      },
+      {
+        "_key": "text-16",
+        "_type": "textBlock",
+        "label": "Item content. Click the edit button to change this text.",
+        "text": "Item content. Click the edit button to change this text."
+      },
+      {
+        "_key": "text-17",
+        "_type": "textBlock",
+        "label": "2024",
+        "text": "2024"
+      },
+      {
+        "_key": "text-18",
+        "_type": "textBlock",
+        "label": "Numan, Adamawa",
+        "text": "Numan, Adamawa"
+      },
+      {
+        "_key": "text-20",
+        "_type": "textBlock",
+        "label": "Item content. Click the edit button to change this text.",
+        "text": "Item content. Click the edit button to change this text."
+      },
+      {
+        "_key": "text-21",
+        "_type": "textBlock",
+        "label": "2023",
+        "text": "2023"
+      },
+      {
+        "_key": "text-22",
+        "_type": "textBlock",
+        "label": "Rann, Kala-Balge, Borno",
+        "text": "Rann, Kala-Balge, Borno"
+      },
+      {
+        "_key": "text-24",
+        "_type": "textBlock",
+        "label": "Item content. Click the edit button to change this text.",
+        "text": "Item content. Click the edit button to change this text."
+      },
+      {
+        "_key": "text-25",
+        "_type": "textBlock",
+        "label": "2023",
+        "text": "2023"
+      },
+      {
+        "_key": "text-26",
+        "_type": "textBlock",
+        "label": "Jalingo, Taraba",
+        "text": "Jalingo, Taraba"
+      },
+      {
+        "_key": "text-28",
+        "_type": "textBlock",
+        "label": "Item content. Click the edit button to change this text.",
+        "text": "Item content. Click the edit button to change this text."
+      },
+      {
+        "_key": "text-29",
+        "_type": "textBlock",
+        "label": "2022",
+        "text": "2022"
+      },
+      {
+        "_key": "text-30",
+        "_type": "textBlock",
+        "label": "Mafa, Jere, Konduga, Borno",
+        "text": "Mafa, Jere, Konduga, Borno"
+      },
+      {
+        "_key": "text-31",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-32",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-33",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-34",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-35",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  },
+  {
+    "_id": "page-news-article",
+    "_type": "page",
+    "title": "News & Article – SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/news-article/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "News & Article",
+        "text": "News & Article"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "News & Article",
+        "text": "News & Article"
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "Page: News & Article",
+        "text": "Page: News & Article"
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "Featured",
+        "text": "Featured"
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-11",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-12",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-13",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-14",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  },
+  {
+    "_id": "page-career",
+    "_type": "page",
+    "title": "Careers",
+    "route": "/career/",
+    "textBlocks": []
+  },
+  {
+    "_id": "vacancy-communication-intern",
+    "_type": "vacancy",
+    "title": "Communication Intern",
+    "department": "COMMUNICATIONS",
+    "summary": "Help share SKF’s work and connect people with stories of inclusion and community impact.",
+    "responsibilities": [
+      "Drafting social media content and programme updates.",
+      "Organising photographs and stories from SKF activities.",
+      "Preparing simple communication materials with the team."
+    ],
+    "skills": "Clear writing, attention to detail, and an interest in social media or visual communication.",
+    "location": "Maiduguri",
+    "attendance": "2–3 days per week",
+    "duration": "6 months",
+    "unpaid": true,
+    "deadline": "2026-11-02T23:59:59+01:00",
+    "active": true
+  },
+  {
+    "_id": "vacancy-hr-intern",
+    "_type": "vacancy",
+    "title": "HR Intern",
+    "department": "PEOPLE & ADMINISTRATION",
+    "summary": "Support the people and administrative work that helps SKF’s team serve communities.",
+    "responsibilities": [
+      "Organising HR records and routine documentation under supervision.",
+      "Coordinating recruitment and onboarding activities.",
+      "Supporting attendance records and internal communication."
+    ],
+    "skills": "Organisation, discretion, clear communication, and confidence using documents and spreadsheets.",
+    "location": "Maiduguri",
+    "attendance": "2–3 days per week",
+    "duration": "6 months",
+    "unpaid": true,
+    "deadline": "2026-11-02T23:59:59+01:00",
+    "active": true
+  },
+  {
+    "_id": "vacancy-finance-intern",
+    "_type": "vacancy",
+    "title": "Finance Intern",
+    "department": "FINANCE",
+    "summary": "Help the finance team maintain organised records that support SKF’s programmes.",
+    "responsibilities": [
+      "Organising receipts, vouchers, and supporting documents.",
+      "Updating spreadsheets and assisting with routine checks.",
+      "Preparing financial records for review under supervision."
+    ],
+    "skills": "Accuracy, spreadsheet skills, confidentiality, and an interest in accounting or financial administration.",
+    "location": "Maiduguri",
+    "attendance": "2–3 days per week",
+    "duration": "6 months",
+    "unpaid": true,
+    "deadline": "2026-11-02T23:59:59+01:00",
+    "active": true
+  },
+  {
+    "_id": "page-career-apply",
+    "_type": "page",
+    "title": "Apply for an internship",
+    "route": "/career/apply/",
+    "textBlocks": []
+  },
+  {
+    "_id": "page-policies",
+    "_type": "page",
+    "title": "Policies – SUPERTOUCH KINDNESS FOUNDATION",
+    "route": "/policies/",
+    "textBlocks": [
+      {
+        "_key": "text-0",
+        "_type": "textBlock",
+        "label": "Policies",
+        "text": "Policies"
+      },
+      {
+        "_key": "text-1",
+        "_type": "textBlock",
+        "label": "Our Policies & Guiding Documents",
+        "text": "Our Policies & Guiding Documents"
+      },
+      {
+        "_key": "text-2",
+        "_type": "textBlock",
+        "label": "Download and explore our organizational policies, frameworks, and guid",
+        "text": "Download and explore our organizational policies, frameworks, and guidelines that reflect our commitment to accountability, inclusion, protection, and transparency in all our work."
+      },
+      {
+        "_key": "text-3",
+        "_type": "textBlock",
+        "label": "Whistle Blower Policy",
+        "text": "Whistle Blower Policy"
+      },
+      {
+        "_key": "text-4",
+        "_type": "textBlock",
+        "label": "HR Policy",
+        "text": "HR Policy"
+      },
+      {
+        "_key": "text-5",
+        "_type": "textBlock",
+        "label": "M&E Policy",
+        "text": "M&E Policy"
+      },
+      {
+        "_key": "text-6",
+        "_type": "textBlock",
+        "label": "Code of Conduct",
+        "text": "Code of Conduct"
+      },
+      {
+        "_key": "text-7",
+        "_type": "textBlock",
+        "label": "Whistle Blower Policy",
+        "text": "Whistle Blower Policy"
+      },
+      {
+        "_key": "text-8",
+        "_type": "textBlock",
+        "label": "HR Policy",
+        "text": "HR Policy"
+      },
+      {
+        "_key": "text-9",
+        "_type": "textBlock",
+        "label": "M&E Policy",
+        "text": "M&E Policy"
+      },
+      {
+        "_key": "text-10",
+        "_type": "textBlock",
+        "label": "Code of Conduct",
+        "text": "Code of Conduct"
+      },
+      {
+        "_key": "text-11",
+        "_type": "textBlock",
+        "label": "Whistle Blower Policy",
+        "text": "Whistle Blower Policy"
+      },
+      {
+        "_key": "text-12",
+        "_type": "textBlock",
+        "label": "HR Policy",
+        "text": "HR Policy"
+      },
+      {
+        "_key": "text-13",
+        "_type": "textBlock",
+        "label": "M&E Policy",
+        "text": "M&E Policy"
+      },
+      {
+        "_key": "text-14",
+        "_type": "textBlock",
+        "label": "Code of Conduct",
+        "text": "Code of Conduct"
+      },
+      {
+        "_key": "text-15",
+        "_type": "textBlock",
+        "label": "Need Help?",
+        "text": "Need Help?"
+      },
+      {
+        "_key": "text-16",
+        "_type": "textBlock",
+        "label": "Don’t hesitate to reach out for more information about our programs, p",
+        "text": "Don’t hesitate to reach out for more information about our programs, partnerships, or how you can get involved."
+      },
+      {
+        "_key": "text-17",
+        "_type": "textBlock",
+        "label": "Who We Are",
+        "text": "Who We Are"
+      },
+      {
+        "_key": "text-18",
+        "_type": "textBlock",
+        "label": "What We Do",
+        "text": "What We Do"
+      },
+      {
+        "_key": "text-19",
+        "_type": "textBlock",
+        "label": "Newsletter",
+        "text": "Newsletter"
+      }
+    ]
+  }
+]

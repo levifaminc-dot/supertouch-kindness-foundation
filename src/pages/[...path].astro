@@ -1,0 +1,29 @@
+---
+import {load} from 'cheerio';
+import {pageContent,vacancies} from '../lib/content';
+import Vacancies from '../components/Vacancies.astro';
+const templates=import.meta.glob('../templates/*.html',{query:'?raw',import:'default',eager:true}) as Record<string,string>;
+const route='/'+(Astro.params.path?Astro.params.path.replace(/\/$/,'')+'/':'');
+const name=Astro.params.path?.replace(/\/$/,'').replaceAll('/','-')||'home';
+const template=templates[`../templates/${name}.html`];
+if(!template){Astro.response.status=404;}
+const $=load(template||'<html><head><title>Page not found | SKF</title></head><body><main><h1>Page not found</h1><a href="/">Return home</a></main></body></html>');
+let content=null;try{content=await pageContent(route);}catch{console.error('CMS content unavailable; using approved page copy.');}
+if(content){if(content.title)$('title').text(content.title+' | Supertouch Kindness Foundation');for(const block of content.textBlocks||[]){if(/^text-\d+$/.test(block._key))$(`[data-cms-text="${block._key}"]`).text(block.text);}}
+let roles:Awaited<ReturnType<typeof vacancies>>=[];
+if(name==='career'||name==='career-apply'){
+ try{roles=(await vacancies()).filter(r=>r.active&&Date.parse(r.deadline)>Date.now());}catch{console.error('Vacancies unavailable.');}
+ if(name==='career'){
+  $('.vacancy-grid').replaceWith('<!--ASTRO_VACANCIES-->');
+  $('.career-status').text(roles.length+' open internships');
+ }
+ if(name==='career-apply'){
+  $('#apply-role').empty().append('<option value="">Select an internship</option>');
+  for(const r of roles)$('#apply-role').append($('<option>').attr('value',r.title).text(r.title));
+  if(process.env.APPLICATIONS_ENABLED!=='true'||!roles.length){$('#application-submit').attr('disabled','disabled');$('#application-error').removeAttr('hidden').text('Online applications are being configured. Please check back shortly or contact SKF for assistance.');}
+ }
+}
+Astro.response.headers.set('Cache-Control','private, no-store');
+const [before,after]=$.html().split('<!--ASTRO_VACANCIES-->');
+---
+<Fragment set:html={before}/>{after!==undefined&&<><Vacancies roles={roles}/><Fragment set:html={after}/></>}

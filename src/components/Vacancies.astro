@@ -1,0 +1,15 @@
+---
+import type {Vacancy} from '../lib/content';
+const {roles} = Astro.props as {roles:Vacancy[]};
+const date=(value:string)=>new Date(value).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric',timeZone:'Africa/Lagos'});
+---
+<div class="vacancy-grid">
+{roles.map(role=><article class="vacancy-card">
+<div class="vacancy-card-top"><span class="vacancy-department">{role.department}</span><span class="vacancy-badge">{role.unpaid?'Unpaid internship':'Internship'}</span></div>
+<h3>{role.title}</h3><p>{role.summary}</p>
+<details><summary>About this opportunity</summary><div><h4>What you’ll support</h4><ul>{role.responsibilities.map(text=><li>{text}</li>)}</ul><h4>Helpful skills</h4><p>{role.skills}</p></div></details>
+<ul class="vacancy-facts"><li><span>Location</span>{role.location}</li><li><span>Attendance</span>{role.attendance}</li><li><span>Duration</span>{role.duration}</li><li><span>Deadline</span>{date(role.deadline)}</li></ul>
+<a class="career-button" href={'/career/apply/?role='+encodeURIComponent(role.title)}>Apply for this role <span aria-hidden="true">↗</span></a>
+</article>)}
+</div>
+{!roles.length&&<p>No internships are currently open. Please check back for future opportunities.</p>}

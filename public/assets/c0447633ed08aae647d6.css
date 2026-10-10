@@ -1,0 +1,137 @@
+.google-chart-texture{
+    display: none;
+}
+
+.table-data-not-available-txt{
+    display: none;
+}
+
+/* buttons */
+.graphina-btn {
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.graphina-btn-link {
+    background: transparent;
+    color: #C8175D;
+    text-decoration: underline;
+    padding: 0;
+    border: none;
+}
+
+.graphina-btn-primary {
+    color: #ffffff;
+    background: #C8175D;
+}
+
+.graphina-restricted-content {
+    background: #f3f3f3;
+    text-align: center;
+    padding: 32px;
+}
+
+.graphina-restricted-content h5 {
+    margin-top: 0;
+}
+
+.graphina-password-heading {
+    font-size: 32px;
+    line-height: 42px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+}
+
+.graphina-password-restricted-form .graphina-password-message {
+    font-size: 16px;
+}
+
+.graphina-input-wrapper input.form-control {
+    width: 100%;
+    background: #fff;
+    border: none;
+    height: 45px;
+    padding: 10px 16px;
+}
+
+.button-box {
+    margin-top: 24px;
+}
+
+.button-box .graphina-login-btn {
+    background: #C8175D;
+    padding: 12px 24px;
+    border: transparent;
+    color: #fff;
+    font-size: 14px;
+}
+
+/* filter */
+.graphina-filter-div label {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+.graphina-chart-filter-date-time,
+.form-select {
+    height: 42px;
+    line-height: 1.4;
+    padding: 10px 20px;
+    background: #fff;
+    border: 1px solid #eee;
+    color: #6a6969;
+    width: 100%;
+}
+
+.graphina-chart-filter-date-time:focus,
+.form-select:focus {
+    outline: none;
+}
+
+.graphina-filter-div-button {
+    background: #C8175D;
+    padding: 12px 24px;
+    border: transparent;
+    color: #fff;
+    font-size: 14px;
+}
+
+.graphina-chart-loader {
+    text-align: center;
+}
+
+.graphina-chart-loader img {
+    height: 50px;
+}
+
+.chart-card {
+    width: 100%;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 4px;
+}
+
+.chart-card h4 {
+    margin-top: 0;
+}
+
+@media screen and (max-width: 674px) {
+    .chart-card {
+        padding: 25px 0px !important;
+    }
+}
+
+.chart-box {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-shadow: 0 22px 35px -16px rgba(0, 0, 0, 0.1);
+}
+
+/* For jetpack plugin conflict solution */
+.elementor-element .chart-box svg {
+    width: unset !important;
+}

@@ -1,0 +1,5 @@
+---
+const hrUrl=process.env.HR_SHAREPOINT_URL;
+const valid=hrUrl&&/^https:\/\/[a-z0-9-]+\.sharepoint\.com\//i.test(hrUrl);
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width"/><meta name="robots" content="noindex"/><title>Recruitment review | SKF</title></head><body><main style="max-width:700px;margin:10vh auto;font:18px/1.7 system-ui;padding:24px"><a href="/career/">← Careers</a><h1>Recruitment review</h1><p>HR staff review applications and download CVs and cover letters in the restricted SKF SharePoint recruitment library. Sign in with your authorised Microsoft work account.</p>{valid?<a href={hrUrl}>Open recruitment library ↗</a>:<p>The recruitment library connection is being configured.</p>}</main></body></html>

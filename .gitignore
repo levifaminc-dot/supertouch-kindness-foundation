@@ -1,0 +1,10 @@
+node_modules/
+.astro/
+dist/
+.vercel/
+studio-dist/
+.env
+.env.*
+!.env.example
+*.log
+.local/

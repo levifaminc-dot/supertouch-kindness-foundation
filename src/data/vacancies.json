@@ -1,0 +1,59 @@
+[
+  {
+    "_id": "vacancy-communication-intern",
+    "_type": "vacancy",
+    "title": "Communication Intern",
+    "department": "COMMUNICATIONS",
+    "summary": "Help share SKF’s work and connect people with stories of inclusion and community impact.",
+    "responsibilities": [
+      "Drafting social media content and programme updates.",
+      "Organising photographs and stories from SKF activities.",
+      "Preparing simple communication materials with the team."
+    ],
+    "skills": "Clear writing, attention to detail, and an interest in social media or visual communication.",
+    "location": "Maiduguri",
+    "attendance": "2–3 days per week",
+    "duration": "6 months",
+    "unpaid": true,
+    "deadline": "2026-11-02T23:59:59+01:00",
+    "active": true
+  },
+  {
+    "_id": "vacancy-hr-intern",
+    "_type": "vacancy",
+    "title": "HR Intern",
+    "department": "PEOPLE & ADMINISTRATION",
+    "summary": "Support the people and administrative work that helps SKF’s team serve communities.",
+    "responsibilities": [
+      "Organising HR records and routine documentation under supervision.",
+      "Coordinating recruitment and onboarding activities.",
+      "Supporting attendance records and internal communication."
+    ],
+    "skills": "Organisation, discretion, clear communication, and confidence using documents and spreadsheets.",
+    "location": "Maiduguri",
+    "attendance": "2–3 days per week",
+    "duration": "6 months",
+    "unpaid": true,
+    "deadline": "2026-11-02T23:59:59+01:00",
+    "active": true
+  },
+  {
+    "_id": "vacancy-finance-intern",
+    "_type": "vacancy",
+    "title": "Finance Intern",
+    "department": "FINANCE",
+    "summary": "Help the finance team maintain organised records that support SKF’s programmes.",
+    "responsibilities": [
+      "Organising receipts, vouchers, and supporting documents.",
+      "Updating spreadsheets and assisting with routine checks.",
+      "Preparing financial records for review under supervision."
+    ],
+    "skills": "Accuracy, spreadsheet skills, confidentiality, and an interest in accounting or financial administration.",
+    "location": "Maiduguri",
+    "attendance": "2–3 days per week",
+    "duration": "6 months",
+    "unpaid": true,
+    "deadline": "2026-11-02T23:59:59+01:00",
+    "active": true
+  }
+]
