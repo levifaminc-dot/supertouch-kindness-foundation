@@ -8,7 +8,7 @@ Use Node 22.12+ and `npm ci`. Copy `.env.example` to `.env.local` and set the ac
 
 ## Content
 
-Sanity project `e22eonif`, dataset `production`. `sanity.config.ts` defines editable pages and vacancies. `src/data/seed.json` has the approved initial text and vacancy copy. `npm run content:seed` imports only absent documents after `SANITY_WRITE_TOKEN` is set. The public site fetches published content on each request; old page HTML supplies a temporary visual fallback while editors migrate content. Open vacancies must be active and have a future deadline. Applications use the same published vacancy list.
+Sanity project `e22eonif`, dataset `production`. The hosted editor is [supertouch-kindness-editor.sanity.studio](https://supertouch-kindness-editor.sanity.studio/). `sanity.config.ts` defines editable pages and vacancies. `src/data/seed.json` has the approved initial text and vacancy copy. `npm run content:seed` imports only absent documents after `SANITY_WRITE_TOKEN` is set. The website fetches published content on each request; old page HTML supplies a temporary visual fallback while editors migrate content. Open vacancies must be active and have a future deadline. Applications use the same published vacancy list.
 
 ## Recruitment storage
 
@@ -20,4 +20,4 @@ The previous Sites version stores any earlier applications in its D1/R2 bindings
 
 ## Vercel
 
-Connect this private GitHub repository to Vercel with the Astro preset. Add `PUBLIC_SANITY_PROJECT_ID=e22eonif`, `PUBLIC_SANITY_DATASET=production`, and recruitment variables in Vercel settings. Keep Deployment Protection enabled until the owner decides to make the new site public. Do not add secret variables to the repository.
+The private GitHub repository is connected to the Vercel project `supertouch-kindness-foundation` with the Astro preset. The Sanity project and dataset default to `e22eonif` and `production`; set `PUBLIC_SANITY_PROJECT_ID` and `PUBLIC_SANITY_DATASET` in Vercel if these change. Keep Vercel Authentication enabled for all deployments until the owner decides to make the new site public. Add the recruitment variables only when SharePoint storage is ready. Do not add secret variables to the repository.
