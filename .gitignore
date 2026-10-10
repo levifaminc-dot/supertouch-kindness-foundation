@@ -3,6 +3,7 @@ node_modules/
 dist/
 .vercel/
 studio-dist/
+.sanity/
 .env
 .env.*
 !.env.example

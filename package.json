@@ -2,6 +2,6 @@
   "name": "supertouch-kindness-foundation", "version": "1.0.0", "private": true, "type": "module",
   "engines": {"node": ">=22.12.0"},
   "scripts": {"dev":"astro dev --host 127.0.0.1", "build":"astro build", "check":"astro check", "test":"node --experimental-strip-types --test tests/*.test.ts", "studio:dev":"sanity dev --host 127.0.0.1", "studio:build":"sanity build studio-dist", "content:seed":"node scripts/seed-sanity.mjs"},
-  "dependencies": {"astro":"latest", "@astrojs/vercel":"latest", "@sanity/client":"latest", "@portabletext/to-html":"latest", "cheerio":"latest", "sanity":"latest", "react":"latest", "react-dom":"latest", "styled-components":"latest"},
-  "devDependencies":{"@astrojs/check":"latest", "typescript":"latest", "@types/node":"latest"}
+  "dependencies": {"astro":"7.3.8", "@astrojs/vercel":"11.0.13", "@sanity/client":"8.9.0", "@portabletext/to-html":"6.0.0", "cheerio":"1.2.0", "sanity":"6.18.0", "react":"19.3.0", "react-dom":"19.3.0", "styled-components":"6.5.3"},
+  "devDependencies":{"@astrojs/check":"0.9.10", "typescript":"6.0.3", "@types/node":"26.6.5"}
 }
