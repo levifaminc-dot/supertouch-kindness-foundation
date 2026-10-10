@@ -4,7 +4,7 @@ Astro website with Sanity content and Microsoft SharePoint recruitment storage. 
 
 ## Frontend architecture
 
-Astro renders the website and fetches published content from Sanity. Tailwind CSS v4 is installed through its Vite plugin, with foundation colors defined in `src/styles/tailwind.css`. The vacancy cards are Astro markup styled with Tailwind utilities. Imported HTML templates and their CSS remain for the other sections while those sections are migrated into reusable Astro components. Tailwind Preflight is omitted so it does not reset the existing templates. New or redesigned sections should use Astro components and Tailwind utilities rather than adding to the imported stylesheets.
+Astro renders all 11 website routes and fetches published content from Sanity. Tailwind CSS v4 is installed through its Vite plugin, with foundation colors defined in `src/styles/tailwind.css`. The shared header and footer, navigation, and vacancy cards are reusable Astro components styled with Tailwind utilities. Every page's content receives shared responsive image, heading, and keyboard-focus utilities. The original Elementor page bodies and their CSS remain during the content migration so approved layouts and imagery are preserved. Tailwind Preflight is omitted so it does not reset those layouts. New or redesigned sections should use Astro components and Tailwind utilities rather than adding to the imported stylesheets.
 
 ## Run locally
 
@@ -24,4 +24,4 @@ The previous Sites version stores any earlier applications in its D1/R2 bindings
 
 ## Vercel
 
-The private GitHub repository is connected to the Vercel project `supertouch-kindness-foundation` with the Astro preset. The Sanity project and dataset default to `e22eonif` and `production`; set `PUBLIC_SANITY_PROJECT_ID` and `PUBLIC_SANITY_DATASET` in Vercel if these change. Keep Vercel Authentication enabled for all deployments until the owner decides to make the new site public. Add the recruitment variables only when SharePoint storage is ready. Do not add secret variables to the repository.
+The GitHub repository `levifaminc-dot/supertouch-kindness-foundation` is currently public and connected to the Vercel project `supertouch-kindness-foundation` with the Astro preset. The Sanity project and dataset default to `e22eonif` and `production`; set `PUBLIC_SANITY_PROJECT_ID` and `PUBLIC_SANITY_DATASET` in Vercel if these change. Vercel Authentication protects all deployments, so the normal URL requires a Vercel sign-in in each browser session. A temporary Vercel share link can provide access to someone holding that link without changing the project's protection setting. Add the recruitment variables only when SharePoint storage is ready. Do not add secret variables to the repository.

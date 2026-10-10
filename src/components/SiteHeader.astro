@@ -1,0 +1,42 @@
+---
+const {route} = Astro.props as {route: string};
+const links = [
+  {label: 'Home', href: '/'},
+  {label: 'About', href: '/about/'},
+  {label: 'Our Team', href: '/our-team/'},
+  {label: 'Our Work', href: '/our-work/'},
+  {label: 'Impact', href: '/impact/'},
+  {label: 'News', href: '/news-article/'},
+  {label: 'Careers', href: '/career/'},
+  {label: 'Contact', href: '/contact/'},
+];
+const active = (href: string) => href === '/' ? route === '/' : route.startsWith(href);
+---
+<a href="#content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:bg-white focus:px-4 focus:py-3 focus:text-skf-blue">Skip to content</a>
+<header class="skf-site-header relative z-30 bg-white text-skf-ink shadow-sm">
+  <div class="skf-topbar bg-skf-blue px-4 py-2 text-xs text-white">
+    <div class="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-x-6 gap-y-1">
+      <span>92, Opp. A.A Kime, Off Lagos Street, Maiduguri, Borno State</span>
+      <div class="flex flex-wrap gap-x-5 gap-y-1">
+        <a class="hover:underline focus-visible:underline" href="mailto:Info@supertouchkindnessfoundation.org">Info@supertouchkindnessfoundation.org</a>
+        <a class="hover:underline focus-visible:underline" href="tel:+2348169126501">+234 816 912 6501</a>
+      </div>
+    </div>
+  </div>
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-4 py-3 lg:px-6">
+    <a href="/" aria-label="Supertouch Kindness Foundation home" class="shrink-0 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-skf-blue">
+      <img src="/assets/205243a8f82d42fb8e97.png" alt="Supertouch Kindness Foundation" class="h-16 w-auto max-w-40 object-contain md:h-20" />
+    </a>
+    <nav aria-label="Primary navigation" class="skf-desktop-nav hidden items-center gap-1 lg:flex">
+      {links.map(({label, href}) => <a href={href} aria-current={active(href) ? 'page' : undefined} class:list={['rounded px-3 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-skf-blue', active(href) ? 'bg-skf-pale text-skf-blue' : 'text-skf-ink hover:bg-skf-pale hover:text-skf-blue']}>{label}</a>)}
+      <a href="/donate/" class="skf-donate ml-2 rounded bg-skf-blue px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-skf-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skf-blue">Donate</a>
+    </nav>
+    <details class="skf-mobile-menu group relative lg:hidden">
+      <summary class="flex cursor-pointer list-none items-center gap-2 rounded border border-skf-line px-3 py-2 text-sm font-bold text-skf-blue focus-visible:outline-2 focus-visible:outline-skf-blue">Menu <span aria-hidden="true" class="text-xl leading-none">☰</span></summary>
+      <nav aria-label="Mobile navigation" class="absolute right-0 top-full z-40 mt-3 w-64 rounded border border-skf-line bg-white p-2 shadow-xl">
+        {links.map(({label, href}) => <a href={href} aria-current={active(href) ? 'page' : undefined} class:list={['block rounded px-3 py-2 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-skf-blue', active(href) ? 'bg-skf-pale text-skf-blue' : 'text-skf-ink hover:bg-skf-pale']}>{label}</a>)}
+        <a href="/donate/" class="mt-2 block rounded bg-skf-blue px-3 py-2 text-center text-sm font-bold text-white">Donate</a>
+      </nav>
+    </details>
+  </div>
+</header>

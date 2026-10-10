@@ -2,6 +2,8 @@
 import {load} from 'cheerio';
 import {pageContent,vacancies} from '../lib/content';
 import Vacancies from '../components/Vacancies.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/tailwind.css';
 const templates=import.meta.glob('../templates/*.html',{query:'?raw',import:'default',eager:true}) as Record<string,string>;
 const route='/'+(Astro.params.path?Astro.params.path.replace(/\/$/,'')+'/':'');
@@ -24,7 +26,18 @@ if(name==='career'||name==='career-apply'){
   if(process.env.APPLICATIONS_ENABLED!=='true'||!roles.length){$('#application-submit').attr('disabled','disabled');$('#application-error').removeAttr('hidden').text('Online applications are being configured. Please check back shortly or contact SKF for assistance.');}
  }
 }
+// Keep the approved page content while replacing the duplicated WordPress
+// chrome with reusable Astro components on every route.
+$('.ekit-template-content-header').first().replaceWith('<!--ASTRO_HEADER-->');
+$('.ekit-template-content-footer').first().replaceWith('<!--ASTRO_FOOTER-->');
+const pageRoot=$('body').children('div,main').not('.ekit-template-content-header,.ekit-template-content-footer').first();
+if(pageRoot.length){
+ if(!pageRoot.attr('id'))pageRoot.attr('id','content');
+ pageRoot.find('h1,h2,h3').addClass('text-balance');
+ pageRoot.find('img').addClass('max-w-full');
+ pageRoot.find('a,button,summary,input,select,textarea').addClass('focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skf-blue');
+}
 Astro.response.headers.set('Cache-Control','private, no-store');
-const [before,after]=$.html().split('<!--ASTRO_VACANCIES-->');
+const pieces=$.html().split(/<!--ASTRO_(HEADER|VACANCIES|FOOTER)-->/);
 ---
-<Fragment set:html={before}/>{after!==undefined&&<><Vacancies roles={roles}/><Fragment set:html={after}/></>}
+{pieces.map(piece => piece==='HEADER' ? <SiteHeader route={route}/> : piece==='FOOTER' ? <SiteFooter/> : piece==='VACANCIES' ? <Vacancies roles={roles}/> : <Fragment set:html={piece}/>)}
