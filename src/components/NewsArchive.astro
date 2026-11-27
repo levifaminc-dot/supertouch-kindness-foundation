@@ -1,40 +1,28 @@
 ---
-import { load } from 'cheerio';
 import SiteHeader from './SiteHeader.astro';
 import SiteFooter from './SiteFooter.astro';
 import { pageContent } from '../lib/content';
-import firstArchive from '../templates/news-article.html?raw';
-import secondArchive from '../templates/news-article-page2.html?raw';
+import type {NewsStory} from '../lib/news';
+import {archiveStories, newsPageSize} from '../lib/news-archive';
 import '../styles/tailwind.css';
 
 interface Props {
-  page: 1 | 2;
+  page: number;
+  importedEntries?: NewsStory[];
 }
 
-const { page } = Astro.props;
+const {page, importedEntries} = Astro.props;
 const archive = '/news-article/';
-const older = '/news-article/page2/';
-const route = page === 1 ? archive : older;
+const pageUrl = (number: number) => number === 1 ? archive : archive + "page" + number + "/";
+const route = pageUrl(page);
 const content = await pageContent(archive).catch(() => null);
 const previousHeading = content?.textBlocks?.find((block: {_key: string; text: string}) => block._key === 'text-0')?.text.trim();
 const heading = previousHeading && previousHeading !== 'News & Article' ? previousHeading : 'News & stories';
-const $ = load(page === 1 ? firstArchive : secondArchive);
 const dateFormat = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' });
 
-const stories = new Map<string, { image?: string; title?: string; date: string }>();
-$('a[href]').each((_, element) => {
-  const link = $(element);
-  const href = link.attr('href') ?? '';
-  const match = href.match(/^(?:https:\/\/supertouchkindnessfoundation\.org)?\/(\d{4})\/(\d{2})\/(\d{2})\/[^/]+\/$/);
-  if (!match) return;
-  const story = stories.get(href) ?? { date: match.slice(1).join('-') };
-  const image = link.find('img').attr('src');
-  const title = link.text().trim();
-  if (image) story.image = image;
-  if (title) story.title = title;
-  stories.set(href, story);
-});
-
+const ordered = importedEntries ?? await archiveStories();
+const totalPages = Math.ceil(ordered.length / newsPageSize);
+const entries = page > 0 ? ordered.slice((page - 1) * newsPageSize, page * newsPageSize) : [];
 Astro.response.headers.set('Cache-Control', 'private, no-store');
 ---
 <!doctype html>
@@ -64,12 +52,13 @@ Astro.response.headers.set('Cache-Control', 'private, no-store');
           <p>Read stories from our communities, follow our disability inclusion work, and keep up with SKF announcements.</p>
         </div>
         <ul class="news-grid" role="list">
-          {[...stories].map(([href, { image, title, date }]) => title && (
+          {entries.map(({ path: href, image, alt, title, summary, publishedOn: date }) => (
             <li class="news-card">
-              {image && <img class="news-photo" src={image} alt="" loading="lazy" decoding="async" />}
+              {image && <img class="news-photo" src={image} alt={alt ?? ""} loading="lazy" decoding="async" />}
               <div class="news-card-copy">
                 <time datetime={date}>{dateFormat.format(new Date(date))}</time>
                 <h3>{title}</h3>
+                {summary && <p>{summary}</p>}
                 <a class="news-button" href={href} aria-label={`Read story: ${title}`}>
                   Read story <span aria-hidden="true">→</span>
                 </a>
@@ -77,12 +66,14 @@ Astro.response.headers.set('Cache-Control', 'private, no-store');
             </li>
           ))}
         </ul>
-        <nav class="news-pagination" aria-label="News archive pages">
-          <span aria-current="page">Page {page} of 2</span>
-          <a class="news-button" rel={page === 1 ? 'next' : 'prev'} href={page === 1 ? older : archive}>
-            {page === 1 ? 'Older stories' : 'Latest stories'} <span aria-hidden="true">{page === 1 ? '→' : '←'}</span>
-          </a>
-        </nav>
+        {entries.length === 0 && <p>No stories were found on this page. <a href={archive}>Return to latest stories</a>.</p>}
+        {entries.length > 0 && totalPages > 1 && (
+          <nav class="news-pagination" aria-label="News archive pages">
+            <span aria-current="page">Page {page} of {totalPages}</span>
+            {page > 1 && <a class="news-button" rel="prev" href={pageUrl(page - 1)}>{page === 2 ? "Latest stories" : "Newer stories"} <span aria-hidden="true">←</span></a>}
+            {page < totalPages && <a class="news-button" rel="next" href={pageUrl(page + 1)}>Older stories <span aria-hidden="true">→</span></a>}
+          </nav>
+        )}
       </section>
     </main>
     <SiteFooter />

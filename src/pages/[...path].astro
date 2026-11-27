@@ -5,14 +5,22 @@ import Vacancies from '../components/Vacancies.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import DonorHero from '../components/DonorHero.astro';
+import NewsStory from '../components/NewsStory.astro';
+import {newsStory} from '../lib/news';
 import seedContent from '../data/seed.json';
 import '../styles/tailwind.css';
 const templates=import.meta.glob('../templates/*.html',{query:'?raw',import:'default',eager:true}) as Record<string,string>;
 const route='/'+(Astro.params.path?Astro.params.path.replace(/\/$/,'')+'/':'');
 const name=Astro.params.path?.replace(/\/$/,'').replaceAll('/','-')||'home';
 const template=templates[`../templates/${name}.html`];
-if(!template){Astro.response.status=404;}
+const story = /^\/\d{4}\/\d{2}\/\d{2}\/[a-z0-9-]+\/$/.test(route) ? await newsStory(route).catch(() => null) : null;
+if(!template && !story?.body?.length){Astro.response.status=404;}
 const $=load(template||'<html><head><title>Page not found | SKF</title></head><body><main><h1>Page not found</h1><a href="/">Return home</a></main></body></html>');
+if (story && template) {
+  $("title").text(story.title + " | Supertouch Kindness Foundation");
+  $("h1").first().text(story.title);
+  if (story.summary) $("meta[name=description]").attr("content", story.summary);
+}
 let content=null;try{content=await pageContent(route);}catch{console.error('CMS content unavailable; using approved page copy.');}
 if(content){if(content.title)$('title').text(content.title+' | Supertouch Kindness Foundation');for(const block of content.textBlocks||[]){if(/^text-\d+$/.test(block._key))$(`[data-cms-text="${block._key}"]`).text(block.text);}}
 let roles:Awaited<ReturnType<typeof vacancies>>=[];
@@ -108,4 +116,6 @@ if(pageRoot.length){
 Astro.response.headers.set('Cache-Control','private, no-store');
 const pieces=$.html().split(/<!--ASTRO_(HEADER|VACANCIES|FOOTER|HERO)-->/);
 ---
+{story?.body?.length ? <NewsStory story={story} /> : <>
 {pieces.map(piece => piece==='HEADER' ? <SiteHeader route={route}/> : piece==='FOOTER' ? <SiteFooter/> : piece==='VACANCIES' ? <Vacancies roles={roles}/> : piece==='HERO' ? <DonorHero eyebrow={heroEyebrow} summary={heroSummary} actionDescriptions={actionDescriptions}/> : <Fragment set:html={piece}/>)}
+</>}

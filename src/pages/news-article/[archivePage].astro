@@ -1,0 +1,11 @@
+---
+import NewsArchive from '../../components/NewsArchive.astro';
+import {archiveStories, newsPageSize} from '../../lib/news-archive';
+
+const match = Astro.params.archivePage?.match(/^page([1-9]\d*)$/);
+const page = match ? Number(match[1]) : 0;
+if (page === 1) return Astro.redirect('/news-article/', 301);
+const entries = await archiveStories();
+if (page < 1 || page > Math.ceil(entries.length / newsPageSize)) Astro.response.status = 404;
+---
+<NewsArchive page={page} importedEntries={entries} />

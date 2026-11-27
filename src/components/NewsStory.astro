@@ -1,0 +1,48 @@
+---
+import {toHTML} from '@portabletext/to-html';
+import type {NewsStory} from '../lib/news';
+import SiteHeader from './SiteHeader.astro';
+import SiteFooter from './SiteFooter.astro';
+import '../styles/tailwind.css';
+
+const {story} = Astro.props as {story: NewsStory};
+const date = new Intl.DateTimeFormat('en-GB', {dateStyle: 'long', timeZone: 'UTC'}).format(new Date(story.publishedOn));
+const body = toHTML(story.body ?? []);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {story.summary && <meta name="description" content={story.summary} />}
+    <title>{story.title} | Supertouch Kindness Foundation</title>
+    <link rel="stylesheet" href="/skf-design.css" />
+    <script src="/skf-controls.js" defer is:inline></script>
+  </head>
+  <body>
+    <SiteHeader route="/news-article/" />
+    <main id="content" tabindex="-1" class="skf-home-section">
+      <article class="news-story">
+        <a href="/news-article/">Back to News</a>
+        <h1>{story.title}</h1>
+        <time datetime={story.publishedOn}>{date}</time>
+        {story.summary && <p class="summary">{story.summary}</p>}
+        {story.image && <img src={story.image} alt={story.alt ?? ''} decoding="async" />}
+        <div class="story-copy" set:html={body} />
+      </article>
+    </main>
+    <SiteFooter />
+  </body>
+</html>
+<style>
+  .news-story { max-width: 48rem; margin-inline: auto; line-height: 1.7; }
+  .news-story h1 { font-size: clamp(1.85rem, 5vw, 3rem); font-weight: 700; line-height: 1.2; margin-block: 1rem; }
+  .news-story img { width: 100%; height: auto; margin-block: 1.5rem; border-radius: 1rem; }
+  .summary { font-size: 1.15rem; margin-block: 1rem; }
+  .story-copy :global(p, ul, ol, blockquote) { margin-block: 1rem; }
+  .story-copy :global(ul, ol) { padding-inline-start: 1.5rem; }
+  .story-copy :global(ul) { list-style: disc; }
+  .story-copy :global(ol) { list-style: decimal; }
+  .story-copy :global(h2, h3, h4) { font-weight: 700; margin-top: 1.5rem; }
+  .news-story a, .story-copy :global(a) { text-decoration: underline; text-underline-offset: .2em; }
+</style>
