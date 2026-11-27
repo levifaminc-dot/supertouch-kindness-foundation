@@ -1,0 +1,68 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/tailwind.css';
+
+type DocumentEntry = {title: string; href?: string; size?: string};
+const sections: {id: string; title: string; documents: DocumentEntry[]}[] = [
+  {id:'impact-reports', title:'Impact reports', documents:[
+    {title:'2024 Impact Report', href:'https://supertouchkindnessfoundation.org/wp-content/uploads/2025/03/2024-ANNUAL-REPORT.pdf', size:'44 MB'},
+    {title:'2023 Impact Report', href:'/wp-content/uploads/2025/03/2023-REPORT.pdf', size:'6.7 MB'},
+    {title:'2022 Impact Report', href:'/wp-content/uploads/2025/03/annual-report.pdf', size:'6.1 MB'},
+    {title:'2021 Impact Report'},
+  ]},
+  {id:'assessments', title:'Assessments', documents:[
+    {title:'Disability Inclusion Endline Survey'},
+    {title:'Disability Inclusion Midline Assessment'},
+    {title:'Disability Inclusion Needs Assessment'},
+    {title:'Maiduguri Flood Report'},
+  ]},
+  {id:'board-reports', title:'Board meeting reports', documents:[
+    {title:'2025 First Biannual Board Meeting'},
+    {title:'2024 Second Biannual Board Meeting'},
+    {title:'2024 First Biannual Board Meeting'},
+    {title:'2023 Second Biannual Board Meeting'},
+  ]},
+];
+const request = (title: string) => 'mailto:info@supertouchkindnessfoundation.org?subject=' + encodeURIComponent('Document request: ' + title);
+---
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Browse SKF impact reports, disability inclusion assessments and board meeting reports." />
+  <title>Reports and Documents | Supertouch Kindness Foundation</title>
+  <link rel="stylesheet" href="/skf-design.css" />
+  <script src="/skf-controls.js" defer is:inline></script>
+</head><body class="skf-impact-page">
+  <SiteHeader route="/report/" />
+  <main id="content" tabindex="-1">
+    <section class="skf-impact-intro" aria-labelledby="reports-title">
+      <div class="skf-home-section">
+        <h1 id="reports-title">Reports and documents</h1>
+        <p>Explore SKF’s annual results, programme assessments and board meeting records.</p>
+        <nav class="skf-actions" aria-label="Document categories">
+          {sections.map(({id,title}) => <a class="skf-action skf-action-outline" href={'#' + id}>{title}</a>)}
+          <a class="skf-action skf-action-outline" href="/policies/">Policies</a>
+        </nav>
+      </div>
+    </section>
+    {sections.map(({id,title,documents}) => <section class="skf-home-section skf-document-section" aria-labelledby={id}>
+      <h2 id={id}>{title}</h2>
+      <ul class="skf-document-list">
+        {documents.map(({title: documentTitle, href, size}) => <li>
+          <div><h3>{documentTitle}</h3>{size && <p>PDF · {size}</p>}</div>
+          <a class="skf-action skf-action-outline" href={href ?? request(documentTitle)} aria-label={(href ? 'Open PDF: ' : 'Request a copy: ') + documentTitle}>
+            {href ? 'Open PDF' : 'Request a copy'}
+          </a>
+        </li>)}
+      </ul>
+    </section>)}
+    <section class="skf-support" aria-labelledby="format-title">
+      <h2 id="format-title">Need an accessible format?</h2>
+      <p>Email SKF with the document title and the format that works for you.</p>
+      <p><a href={request('Accessible format')}>Request an accessible copy</a></p>
+    </section>
+  </main>
+  <SiteFooter />
+</body></html>

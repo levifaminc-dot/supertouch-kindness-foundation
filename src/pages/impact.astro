@@ -9,6 +9,11 @@ const content = await pageContent(route).catch(() => null);
 const blocks = new Map<string, string>(content?.textBlocks?.map((block: {_key: string; text: string}) => [block._key, block.text]) ?? []);
 const copy = (key: string, fallback: string) => blocks.get(key)?.trim() || fallback;
 const featured = '/2025/04/12/community-engagement-strengthening-disability-inclusion-gbv-responses-mitigation-and-srh-services-through-community-based-action-team/';
+const figures = [
+  {value:34768, label:'Mental health and psychosocial support'},
+  {value:23765, label:'Gender-based violence and reproductive health awareness'},
+  {value:2153, suffix:'+', label:'Persons with disabilities'},
+];
 const projects = [
   {id:8, year:'2024', place:'Rann, Kala-Balge, Borno', title:'Supporting women and girls with disabilities', href:'/empowering-women-and-girls-with-disability-to-combat-gbv-and-promote-sexual-and-reproductive-health-2/'},
   {id:12, year:'2024', place:'Rann, Kala-Balge, Borno', title:'Mental health and reproductive health awareness', href:'/awareness-sensitization-on-mhpss-and-srh-in-rann-kala-balge-lga-of-borno-state/'},
@@ -39,6 +44,18 @@ Astro.response.headers.set('Cache-Control','private, no-store');
           <a class="skf-action skf-action-outline" href="#impact-projects">Explore projects</a>
         </div>
       </div>
+    </section>
+    <section class="skf-home-section" aria-labelledby="impact-figures">
+      <h2 id="impact-figures">Impact figures</h2>
+      <dl class="skf-engagement-grid skf-impact-figures">
+        {figures.map(({value,suffix = '',label}) => <div>
+          <dt>{label}</dt>
+          <dd>
+            <span class="sr-only">{value.toLocaleString('en-GB')}{suffix}</span>
+            <span aria-hidden="true"><span data-impact-count={value}>{value.toLocaleString('en-GB')}</span>{suffix}</span>
+          </dd>
+        </div>)}
+      </dl>
     </section>
     <section class="skf-home-section" aria-labelledby="impact-feature">
       <article class="skf-impact-story">

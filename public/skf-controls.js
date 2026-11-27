@@ -18,3 +18,23 @@ for (const menu of document.querySelectorAll('.skf-site-header details')) {
     }
   });
 }
+
+if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const format = new Intl.NumberFormat('en-GB');
+  const counterObserver = new IntersectionObserver((entries) => {
+    for (const {target, isIntersecting} of entries) {
+      if (!isIntersecting) continue;
+      counterObserver.unobserve(target);
+      const finalValue = Number(target.dataset.impactCount);
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / 850, 1);
+        const current = Math.round(finalValue * (1 - (1 - progress) ** 3));
+        target.textContent = format.format(current);
+        if (progress < 1) requestAnimationFrame(tick);
+      }
+      requestAnimationFrame(tick);
+    }
+  }, {threshold: 0.6});
+  for (const counter of document.querySelectorAll('[data-impact-count]')) counterObserver.observe(counter);
+}
