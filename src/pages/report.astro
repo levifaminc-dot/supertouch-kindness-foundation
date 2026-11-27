@@ -4,9 +4,9 @@ import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/tailwind.css';
 
 type DocumentEntry = {title: string; href?: string; size?: string};
+const featured = {title:'2024 Impact Report', href:'https://supertouchkindnessfoundation.org/wp-content/uploads/2025/03/2024-ANNUAL-REPORT.pdf', size:'44 MB'};
 const sections: {id: string; title: string; documents: DocumentEntry[]}[] = [
   {id:'impact-reports', title:'Impact reports', documents:[
-    {title:'2024 Impact Report', href:'https://supertouchkindnessfoundation.org/wp-content/uploads/2025/03/2024-ANNUAL-REPORT.pdf', size:'44 MB'},
     {title:'2023 Impact Report', href:'/wp-content/uploads/2025/03/2023-REPORT.pdf', size:'6.7 MB'},
     {title:'2022 Impact Report', href:'/wp-content/uploads/2025/03/annual-report.pdf', size:'6.1 MB'},
     {title:'2021 Impact Report'},
@@ -34,7 +34,7 @@ const request = (title: string) => 'mailto:info@supertouchkindnessfoundation.org
   <title>Reports and Documents | Supertouch Kindness Foundation</title>
   <link rel="stylesheet" href="/skf-design.css" />
   <script src="/skf-controls.js" defer is:inline></script>
-</head><body class="skf-impact-page">
+</head><body class="skf-impact-page skf-reports-page">
   <SiteHeader route="/report/" />
   <main id="content" tabindex="-1">
     <section class="skf-impact-intro" aria-labelledby="reports-title">
@@ -45,6 +45,19 @@ const request = (title: string) => 'mailto:info@supertouchkindnessfoundation.org
           {sections.map(({id,title}) => <a class="skf-action skf-action-outline" href={'#' + id}>{title}</a>)}
           <a class="skf-action skf-action-outline" href="/policies/">Policies</a>
         </nav>
+      </div>
+    </section>
+    <section class="skf-home-section skf-report-feature" aria-labelledby="featured-report">
+      <div class="skf-report-art" aria-hidden="true">
+        <small>Supertouch Kindness Foundation</small>
+        <strong>2024</strong>
+        <span>Impact report</span>
+      </div>
+      <div>
+        <p class="skf-kicker">Featured publication</p>
+        <h2 id="featured-report">{featured.title}</h2>
+        <p>Read about SKF’s programmes and results for the year.</p>
+        <a class="skf-action" href={featured.href}>Open the 2024 report <span aria-hidden="true">· PDF, {featured.size}</span></a>
       </div>
     </section>
     {sections.map(({id,title,documents}) => <section class="skf-home-section skf-document-section" aria-labelledby={id}>

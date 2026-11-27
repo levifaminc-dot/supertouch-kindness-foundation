@@ -35,7 +35,7 @@ Astro.response.headers.set('Cache-Control','private, no-store');
 </head><body class="skf-impact-page">
   <SiteHeader route={route} />
   <main id="content" tabindex="-1">
-    <section class="skf-impact-intro" aria-labelledby="impact-title">
+    <section class="skf-impact-intro skf-editorial-impact-intro" aria-labelledby="impact-title">
       <div class="skf-home-section">
         <h1 id="impact-title">{copy('text-0','Our impact')}</h1>
         <p>{copy('text-2','SKF has reached more than 34,000 people across Nigeria since 2022 through community-led health, protection and disability inclusion programmes.')}</p>
@@ -45,7 +45,7 @@ Astro.response.headers.set('Cache-Control','private, no-store');
         </div>
       </div>
     </section>
-    <section class="skf-home-section" aria-labelledby="impact-figures">
+    <section class="skf-home-section skf-editorial-figures" aria-labelledby="impact-figures">
       <h2 id="impact-figures">Impact figures</h2>
       <dl class="skf-engagement-grid skf-impact-figures">
         {figures.map(({value,suffix = '',label}) => <div>
@@ -57,9 +57,9 @@ Astro.response.headers.set('Cache-Control','private, no-store');
         </div>)}
       </dl>
     </section>
-    <section class="skf-home-section" aria-labelledby="impact-feature">
+    <section class="skf-home-section skf-editorial-feature" aria-labelledby="impact-feature">
       <article class="skf-impact-story">
-        <img src="/wp-content/uploads/2024/10/IMG_20240923_145939_940-1024x768.avif" width="1024" height="768" alt="Photo from SKF’s disability inclusion project in Adamawa" />
+        <img src="/wp-content/uploads/2024/10/IMG_20240923_121322_422-1536x1152.avif" width="1536" height="1152" loading="lazy" alt="Photo from SKF’s disability inclusion project in Adamawa" />
         <div class="skf-story-copy">
           <p class="skf-kicker">Featured project · Adamawa State</p>
           <h2 id="impact-feature">Disability inclusion in community protection</h2>
@@ -71,7 +71,7 @@ Astro.response.headers.set('Cache-Control','private, no-store');
     <section class="skf-engagement" aria-labelledby="impact-projects">
       <div class="skf-home-section">
         <h2 id="impact-projects">{copy('text-6','Past projects')}</h2>
-        <div class="skf-engagement-grid">
+        <div class="skf-project-index">
           {projects.map(({id, year, place, title, href}) => {
             const description = blocks.get('text-' + id)?.trim();
             return <article>

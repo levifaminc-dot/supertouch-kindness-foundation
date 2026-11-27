@@ -6,23 +6,30 @@ const actions = [
   {title:'Make a donation', link:'See how to give', href:'/donate/'},
 ];
 ---
-<section class="skf-hero" aria-labelledby="skf-hero-title">
+<section class="skf-hero skf-editorial-hero" aria-labelledby="skf-hero-title">
   <div class="skf-hero-copy">
     <p class="skf-kicker">{eyebrow}</p>
     <h1 id="skf-hero-title">Advancing disability rights in Nigeria</h1>
     <p>{summary}</p>
     <div class="skf-actions">
-      <a class="skf-action" href="/contact/#find-support">Find support</a>
+      <a class="skf-action skf-editorial-primary" href="/donate/">Donate to SKF</a>
       <a class="skf-action skf-action-outline" href="/impact/">See our impact</a>
-      <a class="skf-action skf-action-outline" href="/donate/">Donate</a>
+      <a class="skf-action skf-action-outline" href="/contact/#find-support">Find support</a>
     </div>
   </div>
-  <img class="skf-hero-photo" src="/wp-content/uploads/2024/10/DSC_3378-scaled.avif" alt="Participants at an SKF community engagement event in Adamawa State" width="2560" height="1707" fetchpriority="high" />
+  <img class="skf-hero-photo" src="/wp-content/uploads/2024/10/DSC_3378-scaled.avif" srcset="/wp-content/uploads/2024/10/DSC_3378-768x512.avif 768w, /wp-content/uploads/2024/10/DSC_3378-1536x1024.avif 1536w, /wp-content/uploads/2024/10/DSC_3378-2048x1365.avif 2048w, /wp-content/uploads/2024/10/DSC_3378-scaled.avif 2560w" sizes="100vw" alt="Participants at an SKF community engagement event in Adamawa State" width="2560" height="1707" fetchpriority="high" />
 </section>
-<section class="skf-home-section" aria-labelledby="skf-evidence-title">
+<section class="skf-reach-band" aria-label="SKF reported reach">
+  <div class="skf-home-section">
+    <strong>34,000+</strong>
+    <p>People reached across Nigeria since 2022, as reported by SKF.</p>
+    <a href="/impact/">Explore the impact figures</a>
+  </div>
+</section>
+<section class="skf-home-section skf-editorial-feature" aria-labelledby="skf-evidence-title">
   <p class="skf-kicker">Our impact</p>
   <h2 id="skf-evidence-title">See where your support goes</h2>
-  <div class="skf-impact-grid">
+  <div class="skf-impact-grid skf-editorial-grid">
     <article class="skf-impact-story">
       <img src="/wp-content/uploads/2024/10/IMG_20240923_145939_940-1024x768.avif" alt="Photo from SKF’s disability inclusion project in Adamawa" width="1024" height="768" loading="lazy" />
       <div class="skf-story-copy">
@@ -40,7 +47,7 @@ const actions = [
     </article>
   </div>
 </section>
-<section class="skf-engagement" aria-labelledby="skf-engagement-title">
+<section class="skf-engagement skf-editorial-engagement" aria-labelledby="skf-engagement-title">
   <div class="skf-home-section">
     <h2 id="skf-engagement-title">Get involved</h2>
     <div class="skf-engagement-grid">
