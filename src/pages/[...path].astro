@@ -27,11 +27,9 @@ if(name==='career'||name==='career-apply'){
   if(process.env.APPLICATIONS_ENABLED!=='true'||!roles.length){$('#application-submit').attr('disabled','disabled');$('#application-error').removeAttr('hidden').text('Online applications are being configured. Please check back shortly or contact SKF for assistance.');}
  }
 }
-// Use the shared responsive header and retain the original footer where present.
-if (!$('body').is('[data-skf-original-design]')) {
-
-  $('.ekit-template-content-footer').first().replaceWith('<!--ASTRO_FOOTER-->');
-}
+const oldFooter = $('.ekit-template-content-footer').first();
+if (oldFooter.length) oldFooter.replaceWith('<!--ASTRO_FOOTER-->');
+else $('body').append('<!--ASTRO_FOOTER-->');
 const oldHeader = $('.ekit-template-content-header').first();
 if (oldHeader.length) oldHeader.replaceWith('<!--ASTRO_HEADER-->');
 else $('body').prepend('<!--ASTRO_HEADER-->');
@@ -43,11 +41,12 @@ const hero = $('[data-id="1d0b4e27"]');
 const heroEyebrow = hero.find('[data-cms-text="text-0"]').text().trim() || 'Humanitarian aid and community development';
 const heroSummary = hero.find('[data-cms-text="text-1"]').text().trim() || 'SKF works with persons with disabilities and local communities to improve access to health, protection and other essential services.';
 if (name === 'home') hero.replaceWith('<!--ASTRO_HERO-->');
-
-$('.ekit-template-content-footer a[href="#"]').each((_, link) => {
-  const label = $(link).text().trim();
-  if (/privacy|cookie|terms? of use/i.test(label)) $(link).closest('li').remove();
-});
+else {
+  const title = $('h1').first();
+  const banner = title.closest('.elementor-top-section, .e-con.e-parent');
+  if (banner.length) banner.addClass('skf-page-banner');
+  else title.addClass('skf-page-title');
+}
 
 if (name === 'contact') {
   const intro = $('<section class="skf-support" id="find-support" aria-labelledby="skf-support-title"><h2 id="skf-support-title">Find support or contact SKF</h2><p>Ask about disability inclusion, programme referrals, or accommodations for communicating with our team.</p><p><a href="mailto:info@supertouchkindnessfoundation.org">Email SKF</a> · <a href="tel:+2348169126501">Call +234 816 912 6501</a></p></section>');

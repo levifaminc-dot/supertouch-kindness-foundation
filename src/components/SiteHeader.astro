@@ -5,6 +5,7 @@ const links = [
   {label: 'Our Team', href: '/our-team/'},
   {label: 'Our Work', href: '/our-work/'},
   {label: 'Impact', href: '/impact/'},
+  {label: 'Reports', href: '/report/'},
   {label: 'News', href: '/news-article/'},
   {label: 'Careers', href: '/career/'},
   {label: 'Find support', href: '/contact/#find-support'},
@@ -28,14 +29,12 @@ const active = (href: string) => href === '/' ? route === '/' : route.startsWith
     </a>
     <nav aria-label="Primary navigation" class="skf-desktop-nav hidden items-center gap-1 lg:flex">
       {links.map(({label, href}) => <a href={href} aria-current={active(href) ? 'page' : undefined} class:list={['rounded px-3 py-2 text-sm font-semibold transition-colors focus-visible:outline-2 focus-visible:outline-skf-blue', active(href) ? 'bg-skf-pale text-skf-blue' : 'text-skf-ink hover:bg-skf-pale hover:text-skf-blue']}>{label}</a>)}
-      <a href="/donate/" class="skf-donate ml-2 rounded bg-skf-blue px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-skf-ink focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skf-blue">Donate</a>
     </nav>
-    <a href="/donate/" class="skf-action ml-auto lg:hidden">Donate</a>
+    <a href="/donate/" class="skf-action skf-header-donate">Donate</a>
     <details class="skf-mobile-menu group relative lg:hidden">
       <summary class="flex cursor-pointer list-none items-center gap-2 rounded border border-skf-line min-h-11 px-2 py-2 text-sm font-bold text-skf-blue focus-visible:outline-2 focus-visible:outline-skf-blue">Menu</summary>
       <nav aria-label="Mobile navigation" class="skf-menu-panel absolute right-0 top-full z-40 mt-3 w-64 rounded border border-skf-line bg-white p-2 shadow-xl">
         {links.map(({label, href}) => <a href={href} aria-current={active(href) ? 'page' : undefined} class:list={['block rounded px-3 py-2 text-sm font-semibold focus-visible:outline-2 focus-visible:outline-skf-blue', active(href) ? 'bg-skf-pale text-skf-blue' : 'text-skf-ink hover:bg-skf-pale']}>{label}</a>)}
-        <a href="/donate/" class="mt-2 block rounded bg-skf-blue px-3 py-2 text-center text-sm font-bold text-white">Donate</a>
       </nav>
     </details>
   </div>
