@@ -79,3 +79,4 @@ body[data-skf-page] .skf-page-banner a:not(.elementor-button) { color:#07588e; }
 body[data-skf-page] .skf-page-banner { min-height:0 !important; padding-block:clamp(2.5rem,6vw,5rem) !important; }
 body[data-skf-page] .skf-page-banner > .elementor-container { min-height:0 !important; }
 body[data-skf-page] .skf-page-banner :is(.elementor-invisible,.animated) { visibility:visible !important; animation:none !important; }
+body[data-skf-page] .skf-page-banner .elementor-heading-title:not(h1) { font-size:clamp(1rem,2vw,1.3rem) !important; line-height:1.5; }
