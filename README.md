@@ -8,7 +8,7 @@ Astro renders all 11 website routes and fetches published content from Sanity. T
 
 ## Run locally
 
-Use Node 22.12+ and `npm ci`. Copy `.env.example` to `.env.local` and set the account specific values. `npm run dev` starts the website; `npm run studio:dev` starts the Sanity editor. `npm run build` checks the Vercel build.
+Use Node 22.12+ and `npm ci`. Copy `.env.example` to `.env.local` and set the account specific values. `npm run dev` starts the website; `npm run studio:dev` starts the Sanity editor. `npm run build` builds the Cloudflare Worker and its static assets.
 
 ## Content
 
@@ -16,12 +16,16 @@ Sanity project `e22eonif`, dataset `production`. The hosted editor is [supertouc
 
 ## Recruitment storage
 
-Vercel POST `/api/applications` validates the same three fields/constraints as the current form, accepts one CV PDF and optional cover letter PDF up to 2 MB each, then writes a unique folder to a selected SharePoint document library through Microsoft Graph. It writes `application.json` last, so a retry can return the same reference after a confirmed completion. HR accesses files using normal SharePoint permissions. No CV or cover letter goes into Sanity or the GitHub repository.
+The Worker POST `/api/applications` validates the same three fields/constraints as the current form, accepts one CV PDF and optional cover letter PDF up to 2 MB each, then writes a unique folder to a selected SharePoint document library through Microsoft Graph. It writes `application.json` last, so a retry can return the same reference after a confirmed completion. HR accesses files using normal SharePoint permissions. No CV or cover letter goes into Sanity or the GitHub repository.
 
 Set the `SHAREPOINT_*` environment variables to an Entra app with narrowly scoped permission to the recruitment site. Grant access to the HR team on the SharePoint library. Keep `APPLICATIONS_ENABLED=false` until real uploads and HR downloads have been verified. Set a stable random `APPLICATION_SIGNING_SECRET` of at least 32 characters. The application page disables submissions until storage is ready.
 
 The previous Sites version stores any earlier applications in its D1/R2 bindings. Those records need a separate controlled export and transfer; this repository does not silently move candidate data.
 
-## Vercel
+## Cloudflare migration preview
 
-The GitHub repository `levifaminc-dot/supertouch-kindness-foundation` is currently public and connected to the Vercel project `supertouch-kindness-foundation` with the Astro preset. The Sanity project and dataset default to `e22eonif` and `production`; set `PUBLIC_SANITY_PROJECT_ID` and `PUBLIC_SANITY_DATASET` in Vercel if these change. Vercel Authentication protects all deployments, so the normal URL requires a Vercel sign-in in each browser session. A temporary Vercel share link can provide access to someone holding that link without changing the project's protection setting. Add the recruitment variables only when SharePoint storage is ready. Do not add secret variables to the repository.
+Use Node 24 and npm. Run `npm ci`, `npm test`, and `npm run build` in this checkout. Run `npx wrangler dev` to exercise the built Worker locally. The existing Vercel deployment uses the GitHub main branch. The migration branch has its own Cloudflare Worker name in `wrangler.jsonc`.
+
+The Worker fetches the published Sanity dataset at request time. Set the same Sanity project and dataset in the Worker environment if the defaults change. Put any Sanity read token and SharePoint credentials in Cloudflare Worker secrets. Configure the existing signing secret if migrating the live recruitment endpoint so retries retain their references.
+
+Recruitment is disabled in preview by default. Validate uploads against an approved test folder with test applicant details before enabling it for the public. Verify the homepage, original menu and footer, Sanity content, and the careers flow before attaching the production domain.

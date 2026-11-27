@@ -28,8 +28,10 @@ if(name==='career'||name==='career-apply'){
 }
 // Keep the approved page content while replacing the duplicated WordPress
 // chrome with reusable Astro components on every route.
-$('.ekit-template-content-header').first().replaceWith('<!--ASTRO_HEADER-->');
-$('.ekit-template-content-footer').first().replaceWith('<!--ASTRO_FOOTER-->');
+if (!$('body').is('[data-skf-original-design]')) {
+  $('.ekit-template-content-header').first().replaceWith('<!--ASTRO_HEADER-->');
+  $('.ekit-template-content-footer').first().replaceWith('<!--ASTRO_FOOTER-->');
+}
 const pageRoot=$('body').children('div,main').not('.ekit-template-content-header,.ekit-template-content-footer').first();
 if(pageRoot.length){
  if(!pageRoot.attr('id'))pageRoot.attr('id','content');

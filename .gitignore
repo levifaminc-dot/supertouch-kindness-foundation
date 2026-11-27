@@ -9,3 +9,6 @@ studio-dist/
 !.env.example
 *.log
 .local/
+.wrangler/
+.dev.vars
+.dev.vars.*
