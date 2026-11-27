@@ -48,16 +48,12 @@ const request = (title: string) => 'mailto:info@supertouchkindnessfoundation.org
       </div>
     </section>
     <section class="skf-home-section skf-report-feature" aria-labelledby="featured-report">
-      <div class="skf-report-art" aria-hidden="true">
-        <small>Supertouch Kindness Foundation</small>
-        <strong>2024</strong>
-        <span>Impact report</span>
-      </div>
+      <img class="skf-report-art" src="/reports/2024-impact-cover.webp" alt="Cover of the 2024 SKF Impact Report" width="640" height="904" />
       <div>
         <p class="skf-kicker">Featured publication</p>
         <h2 id="featured-report">{featured.title}</h2>
         <p>Read about SKF’s programmes and results for the year.</p>
-        <a class="skf-action" href={featured.href}>Open the 2024 report <span aria-hidden="true">· PDF, {featured.size}</span></a>
+        <a class="skf-action" href={featured.href}>Open the 2024 report <span>· PDF, {featured.size}</span></a>
       </div>
     </section>
     {sections.map(({id,title,documents}) => <section class="skf-home-section skf-document-section" aria-labelledby={id}>
