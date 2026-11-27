@@ -16,18 +16,16 @@
     "content:seed": "node scripts/seed-sanity.mjs"
   },
   "dependencies": {
-    "@astrojs/vercel": "11.0.13",
+    "@astrojs/cloudflare": "14.4.9",
     "@portabletext/to-html": "6.0.0",
     "@sanity/client": "8.9.0",
-    "astro": "7.3.8",
+    "astro": "7.4.13",
     "cheerio": "1.2.0",
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "sanity": "6.18.0",
-    "styled-components": "6.5.3"
-  },
-  "optionalDependencies": {
-    "@rolldown/binding-linux-x64-gnu": "1.2.13"
+    "styled-components": "6.5.3",
+    "wrangler": "4.168.0"
   },
   "devDependencies": {
     "@astrojs/check": "0.9.10",
