@@ -1,6 +1,7 @@
 import {createClient} from '@sanity/client';
 import {load} from 'cheerio';
 import {readFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
 
 const root = new URL('../', import.meta.url);
 const read = path => readFile(new URL(path, root), 'utf8');
@@ -15,7 +16,7 @@ for (const archive of ['news-article', 'news-article-page2']) {
     const match = link.attr('href')?.match(/^(?:https:\/\/supertouchkindnessfoundation\.org)?(\/(\d{4})\/(\d{2})\/(\d{2})\/[a-z0-9-]+\/)$/);
     if (!match) continue;
     const [, path, year, month, day] = match;
-    const id = path.slice(1, -1).replaceAll('/', '-');
+    const id = createHash('sha256').update(path).digest('hex').slice(0, 24);
     const story = documents.get(path) ?? {
       _id: `news-${id}`, _type: 'newsStory', path, publishedOn: `${year}-${month}-${day}`, legacy: true,
     };
@@ -28,11 +29,12 @@ for (const archive of ['news-article', 'news-article-page2']) {
 }
 
 for (const story of documents.values()) {
-  const template = await read(`src/templates/${story._id.slice(5)}.html`).catch(error => {
+  const template = await read(`src/templates/${story.path.slice(1, -1).replaceAll('/', '-')}.html`).catch(error => {
     if (error.code === 'ENOENT') return null;
     throw error;
   });
   story.hasLegacyBody = template !== null;
+  if (!story.hasLegacyBody) story._id = 'drafts.' + story._id;
   if (!story.title || !story.legacyImage) throw new Error(`Incomplete archive record: ${story.path}`);
 }
 
