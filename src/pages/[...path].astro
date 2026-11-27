@@ -5,6 +5,7 @@ import Vacancies from '../components/Vacancies.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import DonorHero from '../components/DonorHero.astro';
+import seedContent from '../data/seed.json';
 import '../styles/tailwind.css';
 const templates=import.meta.glob('../templates/*.html',{query:'?raw',import:'default',eager:true}) as Record<string,string>;
 const route='/'+(Astro.params.path?Astro.params.path.replace(/\/$/,'')+'/':'');
@@ -40,7 +41,23 @@ $('body').attr('data-skf-page', name);
 const hero = $('[data-id="1d0b4e27"]');
 const heroEyebrow = hero.find('[data-cms-text="text-0"]').text().trim() || 'Humanitarian aid and community development';
 const heroSummary = hero.find('[data-cms-text="text-1"]').text().trim() || 'SKF works with persons with disabilities and local communities to improve access to health, protection and other essential services.';
-if (name === 'home') hero.replaceWith('<!--ASTRO_HERO-->');
+const engagement = $('[data-id="74e5948b"]');
+const homeSeed = seedContent.find((entry) => entry.route === '/');
+const defaultActions = [
+  'Explore the programmes improving access to health, protection and essential services.',
+  'Share your skills and help build more inclusive communities.',
+  'Support locally led work that advances disability rights across Nigeria.',
+];
+const actionDescriptions = defaultActions.map((fallback, index) => {
+  const key = 'text-' + (index + 2);
+  const current = engagement.find('[data-cms-text="' + key + '"]').text().trim();
+  const initial = homeSeed?.textBlocks?.find((block) => block._key === key)?.text.trim();
+  return current && current !== initial ? current : fallback;
+});
+if (name === 'home') {
+  hero.replaceWith('<!--ASTRO_HERO-->');
+  engagement.remove();
+}
 else {
   const title = $('h1').first();
   const banner = title.closest('.elementor-top-section, .e-con.e-parent');
@@ -91,4 +108,4 @@ if(pageRoot.length){
 Astro.response.headers.set('Cache-Control','private, no-store');
 const pieces=$.html().split(/<!--ASTRO_(HEADER|VACANCIES|FOOTER|HERO)-->/);
 ---
-{pieces.map(piece => piece==='HEADER' ? <SiteHeader route={route}/> : piece==='FOOTER' ? <SiteFooter/> : piece==='VACANCIES' ? <Vacancies roles={roles}/> : piece==='HERO' ? <DonorHero eyebrow={heroEyebrow} summary={heroSummary}/> : <Fragment set:html={piece}/>)}
+{pieces.map(piece => piece==='HEADER' ? <SiteHeader route={route}/> : piece==='FOOTER' ? <SiteFooter/> : piece==='VACANCIES' ? <Vacancies roles={roles}/> : piece==='HERO' ? <DonorHero eyebrow={heroEyebrow} summary={heroSummary} actionDescriptions={actionDescriptions}/> : <Fragment set:html={piece}/>)}
