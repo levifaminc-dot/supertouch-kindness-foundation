@@ -1,0 +1,76 @@
+---
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import {pageContent} from '../lib/content';
+import '../styles/tailwind.css';
+
+const route = '/impact/';
+const content = await pageContent(route).catch(() => null);
+const blocks = new Map<string, string>(content?.textBlocks?.map((block: {_key: string; text: string}) => [block._key, block.text]) ?? []);
+const copy = (key: string, fallback: string) => blocks.get(key)?.trim() || fallback;
+const featured = '/2025/04/12/community-engagement-strengthening-disability-inclusion-gbv-responses-mitigation-and-srh-services-through-community-based-action-team/';
+const projects = [
+  {id:8, year:'2024', place:'Rann, Kala-Balge, Borno', title:'Supporting women and girls with disabilities', href:'/empowering-women-and-girls-with-disability-to-combat-gbv-and-promote-sexual-and-reproductive-health-2/'},
+  {id:12, year:'2024', place:'Rann, Kala-Balge, Borno', title:'Mental health and reproductive health awareness', href:'/awareness-sensitization-on-mhpss-and-srh-in-rann-kala-balge-lga-of-borno-state/'},
+  {id:16, year:'2024', place:'Numan, Adamawa', title:'Mental health and protection awareness', href:'/awareness-sensitization-on-mhpss-and-gbv-numa-lga-of-adamawa-state/'},
+  {id:20, year:'2023', place:'Rann, Kala-Balge, Borno', title:'Community awareness on health and protection', href:'/awareness-sensitization-on-mhpss-gbv-and-srh-in-rann-kala-balge-lga-of-borno-state/'},
+  {id:24, year:'2023', place:'Jalingo, Taraba', title:'Mental health and gender-based violence awareness', href:'/awareness-sensitization-on-mhpss-and-gbv-jalingo-lga-taraba-state/'},
+  {id:28, year:'2022', place:'Mafa, Jere and Konduga, Borno', title:'Cash support for survivors of explosive ordnance', href:'/cash-support-for-victim-of-explosive-ordnance-in-mafa-jere-and-konduga-lgas-of-borno-state/'},
+];
+Astro.response.headers.set('Cache-Control','private, no-store');
+---
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explore SKF’s impact, disability inclusion projects and annual reports." />
+  <title>Our Impact | Supertouch Kindness Foundation</title>
+  <link rel="stylesheet" href="/skf-design.css" />
+  <script src="/skf-controls.js" defer is:inline></script>
+</head><body class="skf-impact-page">
+  <SiteHeader route={route} />
+  <main id="content" tabindex="-1">
+    <section class="skf-impact-intro" aria-labelledby="impact-title">
+      <div class="skf-home-section">
+        <h1 id="impact-title">{copy('text-0','Our impact')}</h1>
+        <p>{copy('text-2','SKF has reached more than 34,000 people across Nigeria since 2022 through community-led health, protection and disability inclusion programmes.')}</p>
+        <div class="skf-actions">
+          <a class="skf-action" href="/report/#impact-reports">Browse impact reports</a>
+          <a class="skf-action skf-action-outline" href="#impact-projects">Explore projects</a>
+        </div>
+      </div>
+    </section>
+    <section class="skf-home-section" aria-labelledby="impact-feature">
+      <article class="skf-impact-story">
+        <img src="/wp-content/uploads/2024/10/IMG_20240923_145939_940-1024x768.avif" width="1024" height="768" alt="Photo from SKF’s disability inclusion project in Adamawa" />
+        <div class="skf-story-copy">
+          <p class="skf-kicker">Featured project · Adamawa State</p>
+          <h2 id="impact-feature">Disability inclusion in community protection</h2>
+          <p>SKF worked with community-based action teams in Michika, Mubi North and Hong to improve disability inclusion in gender-based violence response and access to sexual and reproductive health services.</p>
+          <a class="skf-action skf-action-outline" href={featured}>Read the Adamawa project story</a>
+        </div>
+      </article>
+    </section>
+    <section class="skf-engagement" aria-labelledby="impact-projects">
+      <div class="skf-home-section">
+        <h2 id="impact-projects">{copy('text-6','Past projects')}</h2>
+        <div class="skf-engagement-grid">
+          {projects.map(({id, year, place, title, href}) => {
+            const description = blocks.get('text-' + id)?.trim();
+            return <article>
+              <p class="skf-kicker">{copy('text-' + (id + 1), year)} · {copy('text-' + (id + 2), place)}</p>
+              <h3><a class="skf-project-link" href={href}>{title}</a></h3>
+              {description && !description.startsWith('Item content.') && <p>{description}</p>}
+            </article>;
+          })}
+        </div>
+      </div>
+    </section>
+    <section class="skf-home-section" aria-labelledby="impact-support">
+      <h2 id="impact-support">Support the work</h2>
+      <p>Help fund community-led disability inclusion, health and protection programmes.</p>
+      <a class="skf-action" href="/donate/">See how to give</a>
+    </section>
+  </main>
+  <SiteFooter />
+</body></html>

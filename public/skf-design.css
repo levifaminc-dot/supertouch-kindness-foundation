@@ -123,3 +123,11 @@ body[data-skf-page] .skf-page-banner .elementor-heading-title:not(h1) { font-siz
 @media (prefers-reduced-motion:reduce) {
   :is(.skf-site-header,.skf-site-footer,main,[role="main"]) :is(button,input,[role="button"],.elementor-button,.skf-action,.career-button,summary) { transition:none; }
 }
+.skf-impact-page { margin:0; color:#102b42; }
+.skf-impact-intro { background:#eaf5fb; }
+.skf-impact-intro h1 { margin:0 0 .75rem; font-size:clamp(2rem,5vw,4rem); line-height:1.08; letter-spacing:-.035em; }
+.skf-impact-intro p { max-width:63ch; font-size:clamp(1rem,2vw,1.2rem); line-height:1.6; }
+.skf-project-link { color:#07588e; text-decoration:underline; text-underline-offset:.18em; }
+.skf-project-link:hover { color:#033956; text-decoration-thickness:2px; }
+.skf-impact-page main :focus-visible { outline:3px solid #123b59; outline-offset:4px; }
+.skf-impact-page .skf-home-section,.skf-impact-page .skf-impact-story > * { min-inline-size:0; }
