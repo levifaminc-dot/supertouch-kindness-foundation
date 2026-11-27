@@ -68,3 +68,10 @@ body[data-skf-page] .skf-page-banner a:not(.elementor-button) { color:#07588e; }
 @media (max-width:767px) {
   body[data-skf-page] :is(.skf-page-title,.skf-page-banner h1) { text-wrap:wrap; }
 }
+.skf-site-footer .skf-footer-logo { max-inline-size:100%; }
+.skf-site-footer .skf-footer-logo img { max-inline-size:100%; }
+@media (max-width:767px) {
+  .skf-careers .career-apply { grid-template-columns:minmax(0,1fr); }
+  .skf-careers .form-field :is(input,select,textarea) { box-sizing:border-box; min-inline-size:0; max-inline-size:100%; }
+  .skf-site-footer .grid > * { min-inline-size:0; }
+}
