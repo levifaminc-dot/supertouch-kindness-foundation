@@ -1,0 +1,30 @@
+---
+const {eyebrow, summary} = Astro.props as {eyebrow: string; summary: string};
+---
+<section class="skf-hero" aria-labelledby="skf-hero-title">
+  <div class="skf-hero-copy">
+    <p class="skf-kicker">{eyebrow}</p>
+    <h1 id="skf-hero-title">Advancing disability rights in Nigeria</h1>
+    <p>{summary}</p>
+    <div class="skf-actions">
+      <a class="skf-action" href="/contact/#find-support">Find support</a>
+      <a class="skf-action skf-action-outline" href="/impact/">See our impact</a>
+      <a class="skf-action skf-action-outline" href="/donate/">Donate</a>
+    </div>
+  </div>
+  <img class="skf-hero-photo" src="/wp-content/uploads/2024/10/DSC_3378-scaled.avif" alt="Participants at an SKF community engagement event in Adamawa State" width="2560" height="1707" fetchpriority="high" />
+</section>
+<section class="skf-evidence" aria-labelledby="skf-evidence-title">
+  <div>
+    <p class="skf-kicker">Our impact</p>
+    <h2 id="skf-evidence-title">See where your support goes</h2>
+    <p>Explore annual impact reports from 2021 to 2024 and SKF’s disability inclusion assessments.</p>
+    <a href="/report/#impact-reports">Read the impact reports</a>
+  </div>
+  <div>
+    <p class="skf-kicker">Community-led work</p>
+    <h3>Disability inclusion in Adamawa</h3>
+    <p>SKF worked with local action teams in Michika, Mubi North and Hong to strengthen disability inclusion in protection and health services.</p>
+    <a href="/2025/04/12/community-engagement-strengthening-disability-inclusion-gbv-responses-mitigation-and-srh-services-through-community-based-action-team/">Read about the Adamawa project</a>
+  </div>
+</section>

@@ -1,0 +1,54 @@
+:root { --skf-action-blue: #07588e; }
+.skf-actions { display:flex; flex-wrap:wrap; gap:.75rem; margin-block:1.1rem .25rem; }
+.skf-action { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:.55rem 1rem; background:var(--skf-action-blue); color:white; border:2px solid var(--skf-action-blue); border-radius:.45rem; font:inherit; font-weight:700; text-decoration:none; cursor:pointer; transition:background-color .18s ease, color .18s ease; }
+.skf-action:hover { background:#033956; color:white; border-color:#033956; }
+.skf-action-outline { background:transparent; color:var(--skf-action-blue); }
+body[data-skf-original-design] .elementor-button { background-color:var(--skf-action-blue); }
+body[data-skf-original-design] :is(a, button, summary, input, select, textarea):focus-visible, .skf-site-header :focus-visible { outline:3px solid #123b59; outline-offset:3px; box-shadow:0 0 0 2px #fff; }
+.skf-hero { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:center; background:#eaf5fb; color:#102b42; }
+.skf-hero-copy { padding:clamp(1.25rem,5vw,5rem); }
+.skf-hero h1 { margin:0 0 .75rem; font-size:clamp(2rem,4.5vw,4.3rem); line-height:1.06; letter-spacing:-.035em; }
+.skf-hero p, .skf-evidence p, .skf-support p { max-width:62ch; margin:.65rem 0; }
+.skf-kicker { color:#07588e; font-size:.9rem; font-weight:750; letter-spacing:.045em; }
+.skf-hero-photo { width:100%; height:100%; max-height:35rem; min-height:0; object-fit:cover; }
+.skf-evidence { width:min(92%,70rem); margin:clamp(1.5rem,5vw,4rem) auto; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1rem; }
+.skf-evidence > div, .skf-support { padding:clamp(1rem,3vw,2rem); border:1px solid #cedee9; border-radius:.7rem; background:white; color:#102b42; }
+.skf-evidence :is(h2,h3), .skf-support h2 { font-size:clamp(1.3rem,3vw,2rem); line-height:1.15; margin:0; }
+.skf-evidence a, .skf-support a { color:#07588e; font-weight:700; text-decoration:underline; text-underline-offset:.19em; }
+.skf-support { width:min(92%,70rem); margin:1.5rem auto; }
+.skf-copy-status { margin:.5rem 0; }
+.skf-site-header summary::-webkit-details-marker { display:none; }
+.skf-site-header summary { list-style:none; }
+.skf-site-header details:not([open]) > nav { display:none; }
+.skf-menu-panel { animation:skf-menu-in .18s ease-out both; }
+@keyframes skf-menu-in { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:none; } }
+@media (max-width:767px) {
+  .skf-hero,.skf-evidence { grid-template-columns:1fr; }
+  .skf-hero-photo { aspect-ratio:16 / 9; height:auto; }
+  body[data-skf-page="contact"] .elementor-widget-wrap { max-inline-size:100%; min-inline-size:0; overflow-wrap:anywhere; }
+  body[data-skf-page="contact"] iframe { max-inline-size:100%; }
+}
+@media (prefers-reduced-motion:reduce) {
+  body[data-skf-original-design] *, body[data-skf-original-design] *::before, body[data-skf-original-design] *::after, .skf-site-header * { animation-duration:.01ms !important; transition-duration:.01ms !important; scroll-behavior:auto !important; }
+  body[data-skf-original-design] .elementor-invisible { visibility:visible; }
+}
+body, .skf-site-header, .skf-site-footer, .skf-hero, .skf-evidence, .skf-support {
+  font-family: Verdana, Geneva, sans-serif;
+}
+body[data-skf-original-design] :is(h1,h2,h3,h4,h5,h6,p,li,label,input,select,textarea,.elementor-heading-title,.elementor-button-text,.elementor-icon-list-text,.elementor-counter-title,.elementor-counter-number-wrapper) {
+  font-family: Verdana, Geneva, sans-serif !important;
+}
+.skf-site-header .skf-action { font-size:.875rem; }
+body a.skf-action, body button.skf-action { color:#fff !important; }
+body a.skf-action-outline, body button.skf-action-outline { color:#07588e !important; }
+body :is(a,button).skf-action:hover { color:#fff !important; }
+@media (max-width:440px) {
+  .skf-site-header a[aria-label="Supertouch Kindness Foundation home"] { min-width:0; flex:0 1 7.5rem; }
+  .skf-site-header a[aria-label="Supertouch Kindness Foundation home"] img { max-width:100%; }
+  .skf-site-header .skf-action { padding-inline:.65rem; }
+}
+.skf-support dt { font-weight:700; margin-top:.55rem; }
+.skf-support dd { margin:0; overflow-wrap:anywhere; }
+.skf-evidence > div { transition:box-shadow .18s ease; }
+.skf-evidence > div:focus-within { box-shadow:0 0 0 2px #99bed5; }
+@media (hover:hover) { .skf-evidence > div:hover { box-shadow:0 .3rem 1.1rem #123b5916; } }

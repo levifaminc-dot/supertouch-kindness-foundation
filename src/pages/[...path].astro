@@ -4,6 +4,7 @@ import {pageContent,vacancies} from '../lib/content';
 import Vacancies from '../components/Vacancies.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import DonorHero from '../components/DonorHero.astro';
 import '../styles/tailwind.css';
 const templates=import.meta.glob('../templates/*.html',{query:'?raw',import:'default',eager:true}) as Record<string,string>;
 const route='/'+(Astro.params.path?Astro.params.path.replace(/\/$/,'')+'/':'');
@@ -26,20 +27,69 @@ if(name==='career'||name==='career-apply'){
   if(process.env.APPLICATIONS_ENABLED!=='true'||!roles.length){$('#application-submit').attr('disabled','disabled');$('#application-error').removeAttr('hidden').text('Online applications are being configured. Please check back shortly or contact SKF for assistance.');}
  }
 }
-// Keep the approved page content while replacing the duplicated WordPress
-// chrome with reusable Astro components on every route.
+// Use the shared responsive header and retain the original footer where present.
 if (!$('body').is('[data-skf-original-design]')) {
-  $('.ekit-template-content-header').first().replaceWith('<!--ASTRO_HEADER-->');
+
   $('.ekit-template-content-footer').first().replaceWith('<!--ASTRO_FOOTER-->');
 }
+const oldHeader = $('.ekit-template-content-header').first();
+if (oldHeader.length) oldHeader.replaceWith('<!--ASTRO_HEADER-->');
+else $('body').prepend('<!--ASTRO_HEADER-->');
+
+$('head').append('<link rel="stylesheet" href="/skf-design.css"><script src="/skf-controls.js" defer></script>');
+$('body').attr('data-skf-page', name);
+
+const hero = $('[data-id="1d0b4e27"]');
+const heroEyebrow = hero.find('[data-cms-text="text-0"]').text().trim() || 'Humanitarian aid and community development';
+const heroSummary = hero.find('[data-cms-text="text-1"]').text().trim() || 'SKF works with persons with disabilities and local communities to improve access to health, protection and other essential services.';
+if (name === 'home') hero.replaceWith('<!--ASTRO_HERO-->');
+
+$('.ekit-template-content-footer a[href="#"]').each((_, link) => {
+  const label = $(link).text().trim();
+  if (/privacy|cookie|terms? of use/i.test(label)) $(link).closest('li').remove();
+});
+
+if (name === 'contact') {
+  const intro = $('<section class="skf-support" id="find-support" aria-labelledby="skf-support-title"><h2 id="skf-support-title">Find support or contact SKF</h2><p>Ask about disability inclusion, programme referrals, or accommodations for communicating with our team.</p><p><a href="mailto:info@supertouchkindnessfoundation.org">Email SKF</a> · <a href="tel:+2348169126501">Call +234 816 912 6501</a></p></section>');
+  const contentHeading = $('h1').first().closest('.elementor-top-section, .e-con.e-parent');
+  if (contentHeading.length) contentHeading.after(intro);
+}
+if (name === 'report') {
+  $('h2').filter((_, heading) => $(heading).text().trim() === 'Impact Reports').first().attr('id','impact-reports');
+}
+if (name === 'donate') {
+  $('[data-id="5a80d6e"]').remove();
+  const details = $('[data-id="34723d9"] [data-cms-text="text-5"]').first();
+  if (details.length) {
+    const raw = details.clone();
+    raw.find('br').replaceWith('\n');
+    const text = raw.text();
+    const fields = [...text.matchAll(/(Account Title|Account Name|Account Number|Number|Branch Code|Sort Code|Branch|Name of Bank):\s*([\s\S]*?)(?=\s*(?:Account Title|Account Name|Account Number|Number|Branch Code|Sort Code|Branch|Name of Bank):|$)/gi)];
+    const panel = $('<section class="skf-support" aria-labelledby="skf-giving-title"><h2 id="skf-giving-title">Give by bank transfer</h2><p>Your gift supports disability inclusion, community protection and access to health services.</p></section>');
+    const list = $('<dl></dl>');
+    const actions = $('<div class="skf-actions"></div>');
+    for (const [, label, rawValue] of fields) {
+      const value = rawValue.trim();
+      list.append($('<dt></dt>').text(label), $('<dd></dd>').text(value));
+      const copyLabel = /account title|account name/i.test(label) ? 'Account name' : /^(account )?number$/i.test(label) ? 'Account number' : '';
+      if (copyLabel && value) actions.append($('<button type="button" class="skf-action skf-action-outline"></button>').attr({'data-copy-value':value,'data-copy-label':copyLabel}).text('Copy ' + copyLabel.toLowerCase()));
+    }
+    if (fields.length) panel.append(list,actions,'<p class="skf-copy-status" role="status"></p>');
+    else panel.append($('<div></div>').text(text));
+    panel.append('<p><a href="/report/#impact-reports">See SKF’s impact reports</a> or <a href="mailto:info@supertouchkindnessfoundation.org?subject=Donation%20enquiry">email us about giving</a>.</p>');
+    $('[data-id="4d7780a"]').replaceWith(panel);
+  }
+}
+
 const pageRoot=$('body').children('div,main').not('.ekit-template-content-header,.ekit-template-content-footer').first();
 if(pageRoot.length){
- if(!pageRoot.attr('id'))pageRoot.attr('id','content');
+ pageRoot.attr({id:'content',tabindex:'-1'});
+ if (!pageRoot.is('main')) pageRoot.attr('role','main');
  pageRoot.find('h1,h2,h3').addClass('text-balance');
  pageRoot.find('img').addClass('max-w-full');
  pageRoot.find('a,button,summary,input,select,textarea').addClass('focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skf-blue');
 }
 Astro.response.headers.set('Cache-Control','private, no-store');
-const pieces=$.html().split(/<!--ASTRO_(HEADER|VACANCIES|FOOTER)-->/);
+const pieces=$.html().split(/<!--ASTRO_(HEADER|VACANCIES|FOOTER|HERO)-->/);
 ---
-{pieces.map(piece => piece==='HEADER' ? <SiteHeader route={route}/> : piece==='FOOTER' ? <SiteFooter/> : piece==='VACANCIES' ? <Vacancies roles={roles}/> : <Fragment set:html={piece}/>)}
+{pieces.map(piece => piece==='HEADER' ? <SiteHeader route={route}/> : piece==='FOOTER' ? <SiteFooter/> : piece==='VACANCIES' ? <Vacancies roles={roles}/> : piece==='HERO' ? <DonorHero eyebrow={heroEyebrow} summary={heroSummary}/> : <Fragment set:html={piece}/>)}
