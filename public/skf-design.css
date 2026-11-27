@@ -75,3 +75,4 @@ body[data-skf-page] .skf-page-banner a:not(.elementor-button) { color:#07588e; }
   .skf-careers .form-field :is(input,select,textarea) { box-sizing:border-box; min-inline-size:0; max-inline-size:100%; }
   .skf-site-footer .grid > * { min-inline-size:0; }
 }
+.skf-support { box-sizing:border-box; }
