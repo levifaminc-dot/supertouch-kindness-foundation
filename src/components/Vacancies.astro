@@ -1,5 +1,6 @@
 ---
 import type {Vacancy} from '../lib/content';
+import {vacancyApplicationUrl} from '../lib/vacancy-link';
 const {roles} = Astro.props as {roles: Vacancy[]};
 const date = (value: string) => new Date(value).toLocaleDateString('en-GB', {
   day: 'numeric', month: 'long', year: 'numeric', timeZone: 'Africa/Lagos',
@@ -11,7 +12,7 @@ const date = (value: string) => new Date(value).toLocaleDateString('en-GB', {
       <div class="mb-6 flex flex-col items-start gap-3">
         <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-skf-blue">{role.department}</span>
         <span class="rounded border border-[#f0d999] bg-[#fff2d5] px-2 py-1 text-[11px] font-bold text-[#79520b]">
-          {role.unpaid ? 'Unpaid internship' : 'Internship'}
+          {role.unpaid ? 'Unpaid · ' : ''}{role.employmentType ?? 'Internship'}
         </span>
       </div>
       <h3 class="mb-3 text-[25px] font-bold text-skf-ink">{role.title}</h3>
@@ -31,10 +32,10 @@ const date = (value: string) => new Date(value).toLocaleDateString('en-GB', {
         <li class="flex justify-between gap-4"><span>Duration</span><strong class="text-right font-semibold text-skf-ink">{role.duration}</strong></li>
         <li class="flex justify-between gap-4"><span>Deadline</span><strong class="text-right font-semibold text-skf-ink">{date(role.deadline)}</strong></li>
       </ul>
-      <a class="career-button self-start" href={'/career/apply/?role=' + encodeURIComponent(role.title)}>
+      {vacancyApplicationUrl(role.applicationUrl) && <a class="career-button self-start" href={vacancyApplicationUrl(role.applicationUrl)}>
         Apply for this role <span aria-hidden="true">↗</span>
-      </a>
+      </a>}
     </article>
   ))}
 </div>
-{!roles.length && <p>No internships are currently open. Please check back for future opportunities.</p>}
+{!roles.length && <p>No positions are currently open. Please check back for future opportunities.</p>}

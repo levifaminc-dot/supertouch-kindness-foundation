@@ -2,6 +2,7 @@ import {defineConfig,defineType,defineField} from 'sanity';
 import {structureTool} from 'sanity/structure';
 import settings from './config/sanity.json';
 import newsStory from './sanity.news';
+import {vacancyApplicationUrl} from './src/lib/vacancy-link';
 import {libraryDocument, impactFigure, impactProject} from './sanity.editorial';
 const required=(rule:any)=>rule.required();
 export default defineConfig({name:'skf',title:'Supertouch Kindness Foundation',projectId:process.env.SANITY_STUDIO_PROJECT_ID||settings.projectId,dataset:process.env.SANITY_STUDIO_DATASET||settings.dataset,plugins:[structureTool()],schema:{types:[newsStory,libraryDocument,impactFigure,impactProject,
@@ -19,6 +20,11 @@ export default defineConfig({name:'skf',title:'Supertouch Kindness Foundation',p
   defineField({name:'attendance',type:'string',initialValue:'2–3 days per week',validation:required}),
   defineField({name:'duration',type:'string',initialValue:'6 months',validation:required}),
   defineField({name:'unpaid',title:'Unpaid placement',type:'boolean',initialValue:true}),
+  defineField({name:'employmentType',title:'Position type',type:'string',options:{list:['Internship','Full-time','Part-time','Contract','Volunteer']},initialValue:'Internship'}),
+  defineField({name:'applicationUrl',title:'Public HR application URL',type:'url',description:'Paste the public application link for this specific position from the HR platform.',validation:r=>r.custom((value,context)=>{
+    if(!value)return context.document?.active ? 'Add a public HR link before accepting applications.' : true;
+    return vacancyApplicationUrl(value) ? true : 'Enter a public HTTPS application URL.';
+  })}),
   defineField({name:'deadline',type:'datetime',validation:required}),defineField({name:'active',title:'Accepting applications',type:'boolean',initialValue:false})
  ],preview:{select:{title:'title',subtitle:'department'}}})
 ]}});

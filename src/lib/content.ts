@@ -1,7 +1,7 @@
 import {createClient} from '@sanity/client';
 import defaults from '../data/vacancies.json';
 import settings from '../../config/sanity.json';
-export type Vacancy = typeof defaults[number];
+export type Vacancy = typeof defaults[number] & {applicationUrl?: string; employmentType?: string};
 export function contentClient(){
  const projectId=process.env.PUBLIC_SANITY_PROJECT_ID||import.meta.env.PUBLIC_SANITY_PROJECT_ID||settings.projectId;
  if(!projectId)return null;
