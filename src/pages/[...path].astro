@@ -76,6 +76,9 @@ else {
 }
 
 if (name === 'contact') {
+  $('[data-id="8f323b8"]').replaceWith('<div class="skf-actions"><a class="skf-action" href="mailto:info@supertouchkindnessfoundation.org">Email SKF</a><a class="skf-action skf-action-outline" href="tel:+2348169126501">Call +234 816 912 6501</a></div>');
+  $('iframe[src*="maps.google.com"]').attr('title', 'Map showing the SKF office in Maiduguri');
+
   const intro = $('<section class="skf-support" id="find-support" aria-labelledby="skf-support-title"><h2 id="skf-support-title">Find support or contact SKF</h2><p>Ask about disability inclusion, programme referrals, or accommodations for communicating with our team.</p><p><a href="mailto:info@supertouchkindnessfoundation.org">Email SKF</a> · <a href="tel:+2348169126501">Call +234 816 912 6501</a></p></section>');
   const contentHeading = $('h1').first().closest('.elementor-top-section, .e-con.e-parent');
   if (contentHeading.length) contentHeading.after(intro);
