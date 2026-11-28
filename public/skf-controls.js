@@ -10,6 +10,15 @@ for (const button of document.querySelectorAll('[data-copy-value]')) {
   });
 }
 
+const siteHeader = document.querySelector('.skf-site-header');
+if (siteHeader && 'ResizeObserver' in window) {
+  const updateHeaderHeight = () => document.documentElement.style.setProperty(
+    '--skf-header-height', Math.ceil(siteHeader.getBoundingClientRect().height) + 'px',
+  );
+  updateHeaderHeight();
+  new ResizeObserver(updateHeaderHeight).observe(siteHeader);
+}
+
 for (const menu of document.querySelectorAll('.skf-site-header details')) {
   menu.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && menu.open) {

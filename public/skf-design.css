@@ -16,6 +16,8 @@ body[data-skf-original-design] :is(a, button, summary, input, select, textarea):
 .skf-support a { color:#07588e; font-weight:700; text-decoration:underline; text-underline-offset:.19em; }
 .skf-support { width:min(92%,70rem); margin:1.5rem auto; }
 .skf-copy-status { margin:.5rem 0; }
+html { scroll-padding-top:calc(var(--skf-header-height, 7rem) + .5rem); }
+.skf-site-header { position:sticky; top:0; z-index:30; }
 .skf-site-header summary::-webkit-details-marker { display:none; }
 .skf-site-header summary { list-style:none; }
 .skf-site-header details:not([open]) > nav { display:none; }

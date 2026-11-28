@@ -8,7 +8,7 @@ import DonorHero from '../components/DonorHero.astro';
 import NewsStory from '../components/NewsStory.astro';
 import {newsStory} from '../lib/news';
 import seedContent from '../data/seed.json';
-import '../styles/tailwind.css';
+import LegacyDocument from '../components/LegacyDocument.astro';
 const templates=import.meta.glob('../templates/*.html',{query:'?raw',import:'default',eager:true}) as Record<string,string>;
 const route='/'+(Astro.params.path?Astro.params.path.replace(/\/$/,'')+'/':'');
 const name=Astro.params.path?.replace(/\/$/,'').replaceAll('/','-')||'home';
@@ -114,8 +114,11 @@ if(pageRoot.length){
  pageRoot.find('a,button,summary,input,select,textarea').addClass('focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-skf-blue');
 }
 Astro.response.headers.set('Cache-Control','private, no-store');
-const pieces=$.html().split(/<!--ASTRO_(HEADER|VACANCIES|FOOTER|HERO)-->/);
+const htmlAttributes = $('html').attr() ?? {};
+const bodyAttributes = $('body').attr() ?? {};
+const head = $('head').html() ?? '';
+const pieces = ($('body').html() ?? '').split(/<!--ASTRO_(HEADER|VACANCIES|FOOTER|HERO)-->/);
 ---
-{story?.body?.length ? <NewsStory story={story} /> : <>
+{story?.body?.length ? <NewsStory story={story} /> : <LegacyDocument {htmlAttributes} {bodyAttributes} {head}>
 {pieces.map(piece => piece==='HEADER' ? <SiteHeader route={route}/> : piece==='FOOTER' ? <SiteFooter/> : piece==='VACANCIES' ? <Vacancies roles={roles}/> : piece==='HERO' ? <DonorHero eyebrow={heroEyebrow} summary={heroSummary} actionDescriptions={actionDescriptions}/> : <Fragment set:html={piece}/>)}
-</>}
+</LegacyDocument>}
