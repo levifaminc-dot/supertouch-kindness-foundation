@@ -77,7 +77,7 @@ else {
 
 if (name === 'contact') {
   $('[data-id="8f323b8"]').replaceWith('<div class="skf-actions"><a class="skf-action" href="mailto:info@supertouchkindnessfoundation.org">Email SKF</a><a class="skf-action skf-action-outline" href="tel:+2348169126501">Call +234 816 912 6501</a></div>');
-  $('iframe[src*="maps.google.com"]').attr('title', 'Map showing the SKF office in Maiduguri');
+  $('iframe[src*="maps.google.com"]').attr({title:'Map showing the SKF office in Maiduguri', 'aria-label':'Map showing the SKF office in Maiduguri'});
 
   const intro = $('<section class="skf-support" id="find-support" aria-labelledby="skf-support-title"><h2 id="skf-support-title">Find support or contact SKF</h2><p>Ask about disability inclusion, programme referrals, or accommodations for communicating with our team.</p><p><a href="mailto:info@supertouchkindnessfoundation.org">Email SKF</a> · <a href="tel:+2348169126501">Call +234 816 912 6501</a></p></section>');
   const contentHeading = $('h1').first().closest('.elementor-top-section, .e-con.e-parent');
@@ -110,6 +110,23 @@ if (name === 'donate') {
   }
 }
 
+if (name === 'contact' || name === 'donate') {
+  // Imported entrance animations can leave contact details invisible without Elementor.
+  $('.elementor-invisible').each((_, element) => {
+    const item = $(element).removeClass('elementor-invisible');
+    const raw = item.attr('data-settings');
+    if (!raw) return;
+    try {
+      const settings = JSON.parse(raw);
+      for (const key of Object.keys(settings)) {
+        if (/^_?animation(?:_|$)/.test(key)) delete settings[key];
+      }
+      item.attr('data-settings', JSON.stringify(settings));
+    } catch {
+      // Keep other settings if the imported value cannot be parsed.
+    }
+  });
+}
 const pageRoot=$('body').children('div,main').not('.ekit-template-content-header,.ekit-template-content-footer').first();
 if(pageRoot.length){
  pageRoot.attr({id:'content',tabindex:'-1'});
