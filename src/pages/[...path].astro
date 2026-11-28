@@ -65,6 +65,7 @@ const actionDescriptions = defaultActions.map((fallback, index) => {
 if (name === 'home') {
   hero.replaceWith('<!--ASTRO_HERO-->');
   engagement.remove();
+  $('[data-id="4a7a13e1"], [data-id="1546d717"]').remove();
 }
 else {
   const title = $('h1').first();
