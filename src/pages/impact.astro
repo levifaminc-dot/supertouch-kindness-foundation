@@ -34,19 +34,21 @@ Astro.response.headers.set('Cache-Control','private, no-store');
         </div>
       </div>
     </section>
-    <section class="skf-home-section skf-editorial-figures" aria-labelledby="impact-figures">
-      <h2 id="impact-figures">Impact figures</h2>
-      <dl class="skf-engagement-grid skf-impact-figures">
-        {figures.map(({value,suffix = '',label,period,source,sourceUrl}) => <div>
-          <dt>{label}</dt>
-          <dd>
-            <span class="sr-only">{value.toLocaleString('en-GB')}{suffix}</span>
-            <span aria-hidden="true"><span data-impact-count={value}>{value.toLocaleString('en-GB')}</span>{suffix}</span>
-          </dd>
-          {period && <dd class="skf-figure-source">{period}</dd>}
-          {source && <dd class="skf-figure-source">{sourceUrl ? <a href={sourceUrl}>{source}</a> : source}</dd>}
-        </div>)}
-      </dl>
+    <section class="skf-home-section skf-figure-section" aria-labelledby="impact-figures">
+      <div class="skf-figure-panel">
+        <h2 id="impact-figures">Impact figures</h2>
+        <dl class="skf-figure-grid">
+          {figures.map(({value,suffix = '',label,period,source,sourceUrl}) => <div class="skf-figure-card">
+            <dt>{label}</dt>
+            <dd class="skf-figure-value">
+              <span class="sr-only">{value.toLocaleString('en-GB')}{suffix}</span>
+              <span aria-hidden="true"><span data-impact-count={value}>{value.toLocaleString('en-GB')}</span>{suffix}</span>
+            </dd>
+            {period && <dd class="skf-figure-source">{period}</dd>}
+            {source && <dd class="skf-figure-source">{sourceUrl ? <a href={sourceUrl}>{source}</a> : source}</dd>}
+          </div>)}
+        </dl>
+      </div>
     </section>
     {featured && <section class="skf-home-section skf-editorial-feature" aria-labelledby="impact-feature">
       <article class:list={["skf-impact-story", !featured.coverUrl && "skf-impact-story-no-image"]}>
@@ -81,6 +83,73 @@ Astro.response.headers.set('Cache-Control','private, no-store');
 </body></html>
 
 <style>
-  .skf-impact-figures .skf-figure-source {font-size: .9rem; margin-top: .5rem;}
+  .skf-figure-section { padding-block: clamp(2rem, 5vw, 4rem); }
+  .skf-figure-panel {
+    padding: clamp(1rem, 3.5vw, 3rem);
+    border-radius: clamp(1rem, 3vw, 2rem);
+    background: linear-gradient(125deg, #102e43 30%, #07548a);
+    color: #fff;
+  }
+  .skf-figure-panel h2 {
+    margin: 0 0 clamp(1rem, 3vw, 2rem);
+    color: inherit;
+    font-size: clamp(1.6rem, 3.5vw, 2.7rem);
+    line-height: 1.15;
+  }
+  .skf-figure-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(.65rem, 2vw, 1.25rem);
+    margin: 0;
+  }
+  .skf-figure-card {
+    --figure-accent: #1481ac;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    align-content: start;
+    gap: .6rem;
+    min-width: 0;
+    margin: 0;
+    padding: clamp(.95rem, 2.4vw, 2rem);
+    border-top: .3rem solid var(--figure-accent);
+    border-radius: .9rem;
+    background: #fff;
+    color: #102e43;
+    box-shadow: 0 .55rem 1.4rem #061c2d33;
+  }
+  .skf-figure-card:nth-child(3n + 2) { --figure-accent: #328b80; }
+  .skf-figure-card:nth-child(3n + 3) { --figure-accent: #b6812f; }
+  .skf-figure-card dt {
+    grid-row: 2;
+    max-width: 26ch;
+    font-weight: 700;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+  .skf-figure-value {
+    grid-row: 1;
+    margin: 0;
+    color: #07548a;
+    font-size: clamp(2rem, 4.45vw, 4.4rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -.055em;
+    font-variant-numeric: tabular-nums;
+    overflow-wrap: anywhere;
+  }
+  .skf-figure-source {
+    margin: 0;
+    color: #3e5465;
+    font-size: .875rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+  .skf-figure-source a { color: #07548a; text-decoration: underline; text-underline-offset: .2em; }
+  .skf-figure-source a:hover { color: #102e43; text-decoration-thickness: .15em; }
+  .skf-figure-source a:focus-visible { outline: 2px solid #07548a; outline-offset: 3px; }
+  @media (max-width: 48rem) {
+    .skf-figure-grid { grid-template-columns: 1fr; }
+    .skf-figure-value { font-size: clamp(2.35rem, 8vw, 3.8rem); }
+  }
   .skf-impact-story-no-image {grid-template-columns: 1fr;}
 </style>
