@@ -3,6 +3,8 @@ import firstArchive from '../templates/news-article.html?raw';
 import secondArchive from '../templates/news-article-page2.html?raw';
 import {newsStories, type NewsStory} from './news';
 
+const localArticles = import.meta.glob('../templates/20*.html', {query:'?raw', import:'default'});
+
 export const newsPageSize = 6;
 
 export async function archiveStories(): Promise<NewsStory[]> {
@@ -23,7 +25,9 @@ export async function archiveStories(): Promise<NewsStory[]> {
 
   const byPath = new Map<string, NewsStory>();
   for (const [href, {image, title, date}] of stories) {
-    if (title) byPath.set(new URL(href, 'https://supertouchkindnessfoundation.org').pathname, {
+    const path = new URL(href, 'https://supertouchkindnessfoundation.org').pathname;
+    const template = path.slice(1, -1).replaceAll('/', '-');
+    if (title && Object.hasOwn(localArticles, '../templates/' + template + '.html')) byPath.set(path, {
       path: href, title, image, publishedOn: date,
     });
   }

@@ -1,0 +1,190 @@
+[
+  {
+    "_id": "library-document-1",
+    "_type": "libraryDocument",
+    "order": 1,
+    "title": "2024 Impact Report",
+    "href": "https://supertouchkindnessfoundation.org/wp-content/uploads/2025/03/2024-ANNUAL-REPORT.pdf",
+    "size": "44 MB",
+    "category": "impact-reports",
+    "year": 2024,
+    "featured": true,
+    "coverUrl": "/reports/2024-impact-cover.webp"
+  },
+  {
+    "_id": "library-document-2",
+    "_type": "libraryDocument",
+    "order": 2,
+    "title": "2023 Impact Report",
+    "href": "/wp-content/uploads/2025/03/2023-REPORT.pdf",
+    "size": "6.7 MB",
+    "category": "impact-reports",
+    "year": 2023
+  },
+  {
+    "_id": "library-document-3",
+    "_type": "libraryDocument",
+    "order": 3,
+    "title": "2022 Impact Report",
+    "href": "/wp-content/uploads/2025/03/annual-report.pdf",
+    "size": "6.1 MB",
+    "category": "impact-reports",
+    "year": 2022
+  },
+  {
+    "_id": "library-document-4",
+    "_type": "libraryDocument",
+    "order": 4,
+    "title": "2021 Impact Report",
+    "category": "impact-reports",
+    "year": 2021
+  },
+  {
+    "_id": "library-document-5",
+    "_type": "libraryDocument",
+    "order": 5,
+    "title": "Disability Inclusion Endline Survey",
+    "category": "assessments"
+  },
+  {
+    "_id": "library-document-6",
+    "_type": "libraryDocument",
+    "order": 6,
+    "title": "Disability Inclusion Midline Assessment",
+    "category": "assessments"
+  },
+  {
+    "_id": "library-document-7",
+    "_type": "libraryDocument",
+    "order": 7,
+    "title": "Disability Inclusion Needs Assessment",
+    "category": "assessments"
+  },
+  {
+    "_id": "library-document-8",
+    "_type": "libraryDocument",
+    "order": 8,
+    "title": "Maiduguri Flood Report",
+    "category": "assessments"
+  },
+  {
+    "_id": "library-document-9",
+    "_type": "libraryDocument",
+    "order": 9,
+    "title": "2025 First Biannual Board Meeting",
+    "category": "board-reports",
+    "year": 2025
+  },
+  {
+    "_id": "library-document-10",
+    "_type": "libraryDocument",
+    "order": 10,
+    "title": "2024 Second Biannual Board Meeting",
+    "category": "board-reports",
+    "year": 2024
+  },
+  {
+    "_id": "library-document-11",
+    "_type": "libraryDocument",
+    "order": 11,
+    "title": "2024 First Biannual Board Meeting",
+    "category": "board-reports",
+    "year": 2024
+  },
+  {
+    "_id": "library-document-12",
+    "_type": "libraryDocument",
+    "order": 12,
+    "title": "2023 Second Biannual Board Meeting",
+    "category": "board-reports",
+    "year": 2023
+  },
+  {
+    "_id": "impact-figure-1",
+    "_type": "impactFigure",
+    "order": 1,
+    "value": 34768,
+    "label": "Mental health and psychosocial support"
+  },
+  {
+    "_id": "impact-figure-2",
+    "_type": "impactFigure",
+    "order": 2,
+    "value": 23765,
+    "label": "Gender-based violence and reproductive health awareness"
+  },
+  {
+    "_id": "impact-figure-3",
+    "_type": "impactFigure",
+    "order": 3,
+    "value": 2153,
+    "suffix": "+",
+    "label": "Persons with disabilities"
+  },
+  {
+    "_id": "impact-project-1",
+    "_type": "impactProject",
+    "order": 1,
+    "year": 2024,
+    "place": "Rann, Kala-Balge, Borno",
+    "title": "Supporting women and girls with disabilities",
+    "href": "/empowering-women-and-girls-with-disability-to-combat-gbv-and-promote-sexual-and-reproductive-health-2/"
+  },
+  {
+    "_id": "impact-project-2",
+    "_type": "impactProject",
+    "order": 2,
+    "year": 2024,
+    "place": "Rann, Kala-Balge, Borno",
+    "title": "Mental health and reproductive health awareness",
+    "href": "/awareness-sensitization-on-mhpss-and-srh-in-rann-kala-balge-lga-of-borno-state/"
+  },
+  {
+    "_id": "impact-project-3",
+    "_type": "impactProject",
+    "order": 3,
+    "year": 2024,
+    "place": "Numan, Adamawa",
+    "title": "Mental health and protection awareness",
+    "href": "/awareness-sensitization-on-mhpss-and-gbv-numa-lga-of-adamawa-state/"
+  },
+  {
+    "_id": "impact-project-4",
+    "_type": "impactProject",
+    "order": 4,
+    "year": 2023,
+    "place": "Rann, Kala-Balge, Borno",
+    "title": "Community awareness on health and protection",
+    "href": "/awareness-sensitization-on-mhpss-gbv-and-srh-in-rann-kala-balge-lga-of-borno-state/"
+  },
+  {
+    "_id": "impact-project-5",
+    "_type": "impactProject",
+    "order": 5,
+    "year": 2023,
+    "place": "Jalingo, Taraba",
+    "title": "Mental health and gender-based violence awareness",
+    "href": "/awareness-sensitization-on-mhpss-and-gbv-jalingo-lga-taraba-state/"
+  },
+  {
+    "_id": "impact-project-6",
+    "_type": "impactProject",
+    "order": 6,
+    "year": 2022,
+    "place": "Mafa, Jere, Konduga, Borno",
+    "title": "Cash support for survivors of explosive ordnance",
+    "href": "/cash-support-for-victim-of-explosive-ordnance-in-mafa-jere-and-konduga-lgas-of-borno-state/"
+  },
+  {
+    "_id": "impact-project-adamawa",
+    "_type": "impactProject",
+    "order": 0,
+    "featured": true,
+    "place": "Adamawa State",
+    "title": "Disability inclusion in community protection",
+    "description": "SKF worked with community-based action teams in Michika, Mubi North and Hong to improve disability inclusion in gender-based violence response and access to sexual and reproductive health services.",
+    "href": "/2025/04/12/community-engagement-strengthening-disability-inclusion-gbv-responses-mitigation-and-srh-services-through-community-based-action-team/",
+    "coverUrl": "/wp-content/uploads/2024/10/IMG_20240923_121322_422-1536x1152.avif",
+    "alt": "Photo from SKF’s disability inclusion project in Adamawa"
+  }
+]

@@ -2,8 +2,9 @@ import {defineConfig,defineType,defineField} from 'sanity';
 import {structureTool} from 'sanity/structure';
 import settings from './config/sanity.json';
 import newsStory from './sanity.news';
+import {libraryDocument, impactFigure, impactProject} from './sanity.editorial';
 const required=(rule:any)=>rule.required();
-export default defineConfig({name:'skf',title:'Supertouch Kindness Foundation',projectId:process.env.SANITY_STUDIO_PROJECT_ID||settings.projectId,dataset:process.env.SANITY_STUDIO_DATASET||settings.dataset,plugins:[structureTool()],schema:{types:[newsStory,
+export default defineConfig({name:'skf',title:'Supertouch Kindness Foundation',projectId:process.env.SANITY_STUDIO_PROJECT_ID||settings.projectId,dataset:process.env.SANITY_STUDIO_DATASET||settings.dataset,plugins:[structureTool()],schema:{types:[newsStory,libraryDocument,impactFigure,impactProject,
  defineType({name:'page',title:'Website pages',type:'document',fields:[
   defineField({name:'title',type:'string',validation:required}),
   defineField({name:'route',type:'string',readOnly:true,description:'Preserves existing website links.'}),

@@ -2,26 +2,15 @@
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import {pageContent} from '../lib/content';
+import {impactFigures, impactProjects} from '../lib/editorial';
 import '../styles/tailwind.css';
 
 const route = '/impact/';
-const content = await pageContent(route).catch(() => null);
+const [content, figures, allProjects] = await Promise.all([pageContent(route).catch(() => null), impactFigures(), impactProjects()]);
 const blocks = new Map<string, string>(content?.textBlocks?.map((block: {_key: string; text: string}) => [block._key, block.text]) ?? []);
 const copy = (key: string, fallback: string) => blocks.get(key)?.trim() || fallback;
-const featured = '/2025/04/12/community-engagement-strengthening-disability-inclusion-gbv-responses-mitigation-and-srh-services-through-community-based-action-team/';
-const figures = [
-  {value:34768, label:'Mental health and psychosocial support'},
-  {value:23765, label:'Gender-based violence and reproductive health awareness'},
-  {value:2153, suffix:'+', label:'Persons with disabilities'},
-];
-const projects = [
-  {id:8, year:'2024', place:'Rann, Kala-Balge, Borno', title:'Supporting women and girls with disabilities', href:'/empowering-women-and-girls-with-disability-to-combat-gbv-and-promote-sexual-and-reproductive-health-2/'},
-  {id:12, year:'2024', place:'Rann, Kala-Balge, Borno', title:'Mental health and reproductive health awareness', href:'/awareness-sensitization-on-mhpss-and-srh-in-rann-kala-balge-lga-of-borno-state/'},
-  {id:16, year:'2024', place:'Numan, Adamawa', title:'Mental health and protection awareness', href:'/awareness-sensitization-on-mhpss-and-gbv-numa-lga-of-adamawa-state/'},
-  {id:20, year:'2023', place:'Rann, Kala-Balge, Borno', title:'Community awareness on health and protection', href:'/awareness-sensitization-on-mhpss-gbv-and-srh-in-rann-kala-balge-lga-of-borno-state/'},
-  {id:24, year:'2023', place:'Jalingo, Taraba', title:'Mental health and gender-based violence awareness', href:'/awareness-sensitization-on-mhpss-and-gbv-jalingo-lga-taraba-state/'},
-  {id:28, year:'2022', place:'Mafa, Jere and Konduga, Borno', title:'Cash support for survivors of explosive ordnance', href:'/cash-support-for-victim-of-explosive-ordnance-in-mafa-jere-and-konduga-lgas-of-borno-state/'},
-];
+const featured = allProjects.find(project => project.featured);
+const projects = allProjects.filter(project => project !== featured);
 Astro.response.headers.set('Cache-Control','private, no-store');
 ---
 <!doctype html>
@@ -48,38 +37,37 @@ Astro.response.headers.set('Cache-Control','private, no-store');
     <section class="skf-home-section skf-editorial-figures" aria-labelledby="impact-figures">
       <h2 id="impact-figures">Impact figures</h2>
       <dl class="skf-engagement-grid skf-impact-figures">
-        {figures.map(({value,suffix = '',label}) => <div>
+        {figures.map(({value,suffix = '',label,period,source,sourceUrl}) => <div>
           <dt>{label}</dt>
           <dd>
             <span class="sr-only">{value.toLocaleString('en-GB')}{suffix}</span>
             <span aria-hidden="true"><span data-impact-count={value}>{value.toLocaleString('en-GB')}</span>{suffix}</span>
           </dd>
+          {period && <dd class="skf-figure-source">{period}</dd>}
+          {source && <dd class="skf-figure-source">{sourceUrl ? <a href={sourceUrl}>{source}</a> : source}</dd>}
         </div>)}
       </dl>
     </section>
-    <section class="skf-home-section skf-editorial-feature" aria-labelledby="impact-feature">
-      <article class="skf-impact-story">
-        <img src="/wp-content/uploads/2024/10/IMG_20240923_121322_422-1536x1152.avif" width="1536" height="1152" loading="lazy" alt="Photo from SKF’s disability inclusion project in Adamawa" />
+    {featured && <section class="skf-home-section skf-editorial-feature" aria-labelledby="impact-feature">
+      <article class:list={["skf-impact-story", !featured.coverUrl && "skf-impact-story-no-image"]}>
+        {featured.coverUrl && <img src={featured.coverUrl} width="1536" height="1152" loading="lazy" alt={featured.alt ?? ""} />}
         <div class="skf-story-copy">
-          <p class="skf-kicker">Featured project · Adamawa State</p>
-          <h2 id="impact-feature">Disability inclusion in community protection</h2>
-          <p>SKF worked with community-based action teams in Michika, Mubi North and Hong to improve disability inclusion in gender-based violence response and access to sexual and reproductive health services.</p>
-          <a class="skf-action skf-action-outline" href={featured}>Read the Adamawa project story</a>
+          <p class="skf-kicker">Featured project · {featured.place}</p>
+          <h2 id="impact-feature">{featured.title}</h2>
+          {featured.description && <p>{featured.description}</p>}
+          {featured.href && <a class="skf-action skf-action-outline" href={featured.href}>Read the project story</a>}
         </div>
       </article>
-    </section>
+    </section>}
     <section class="skf-engagement" aria-labelledby="impact-projects">
       <div class="skf-home-section">
         <h2 id="impact-projects">{copy('text-6','Past projects')}</h2>
         <div class="skf-project-index">
-          {projects.map(({id, year, place, title, href}) => {
-            const description = blocks.get('text-' + id)?.trim();
-            return <article>
-              <p class="skf-kicker">{copy('text-' + (id + 1), year)} · {copy('text-' + (id + 2), place)}</p>
-              <h3><a class="skf-project-link" href={href}>{title}</a></h3>
-              {description && !description.startsWith('Item content.') && <p>{description}</p>}
-            </article>;
-          })}
+          {projects.map(({year, place, title, href, description}) => <article>
+            <p class="skf-kicker">{year && <>{year} · </>}{place}</p>
+            <h3>{href ? <a class="skf-project-link" href={href}>{title}</a> : title}</h3>
+            {description && <p>{description}</p>}
+          </article>)}
         </div>
       </div>
     </section>
@@ -91,3 +79,8 @@ Astro.response.headers.set('Cache-Control','private, no-store');
   </main>
   <SiteFooter />
 </body></html>
+
+<style>
+  .skf-impact-figures .skf-figure-source {font-size: .9rem; margin-top: .5rem;}
+  .skf-impact-story-no-image {grid-template-columns: 1fr;}
+</style>

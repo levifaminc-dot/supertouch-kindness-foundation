@@ -1,29 +1,21 @@
 ---
 import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
+import {libraryEntries} from '../lib/editorial';
 import '../styles/tailwind.css';
 
-type DocumentEntry = {title: string; href?: string; size?: string};
-const featured = {title:'2024 Impact Report', href:'https://supertouchkindnessfoundation.org/wp-content/uploads/2025/03/2024-ANNUAL-REPORT.pdf', size:'44 MB'};
-const sections: {id: string; title: string; documents: DocumentEntry[]}[] = [
-  {id:'impact-reports', title:'Impact reports', documents:[
-    {title:'2023 Impact Report', href:'/wp-content/uploads/2025/03/2023-REPORT.pdf', size:'6.7 MB'},
-    {title:'2022 Impact Report', href:'/wp-content/uploads/2025/03/annual-report.pdf', size:'6.1 MB'},
-    {title:'2021 Impact Report'},
-  ]},
-  {id:'assessments', title:'Assessments', documents:[
-    {title:'Disability Inclusion Endline Survey'},
-    {title:'Disability Inclusion Midline Assessment'},
-    {title:'Disability Inclusion Needs Assessment'},
-    {title:'Maiduguri Flood Report'},
-  ]},
-  {id:'board-reports', title:'Board meeting reports', documents:[
-    {title:'2025 First Biannual Board Meeting'},
-    {title:'2024 Second Biannual Board Meeting'},
-    {title:'2024 First Biannual Board Meeting'},
-    {title:'2023 Second Biannual Board Meeting'},
-  ]},
-];
+
+const documents = await libraryEntries();
+const featured = documents.find(entry => entry.featured && entry.href);
+const sections = [
+  {id:'impact-reports', title:'Impact reports'},
+  {id:'assessments', title:'Assessments'},
+  {id:'board-reports', title:'Board meeting reports'},
+].map(section => ({
+  ...section,
+  documents: documents.filter(entry => entry !== featured && entry.category === section.id),
+}));
+Astro.response.headers.set('Cache-Control', 'private, no-store');
 const request = (title: string) => 'mailto:info@supertouchkindnessfoundation.org?subject=' + encodeURIComponent('Document request: ' + title);
 ---
 <!doctype html>
@@ -47,15 +39,14 @@ const request = (title: string) => 'mailto:info@supertouchkindnessfoundation.org
         </nav>
       </div>
     </section>
-    <section class="skf-home-section skf-report-feature" aria-labelledby="featured-report">
-      <img class="skf-report-art" src="/reports/2024-impact-cover.webp" alt="Cover of the 2024 SKF Impact Report" width="640" height="904" />
+    {featured && <section class:list={["skf-home-section", featured.coverUrl && "skf-report-feature"]} aria-labelledby="featured-report">
+      {featured.coverUrl && <img class="skf-report-art" src={featured.coverUrl} alt={"Cover of " + featured.title} width="640" height="904" />}
       <div>
         <p class="skf-kicker">Featured publication</p>
         <h2 id="featured-report">{featured.title}</h2>
-        <p>Read about SKF’s programmes and results for the year.</p>
-        <a class="skf-action" href={featured.href}>Open the 2024 report <span>· PDF, {featured.size}</span></a>
+        <a class="skf-action" href={featured.href}>Open PDF {featured.size && <span>· {featured.size}</span>}</a>
       </div>
-    </section>
+    </section>}
     {sections.map(({id,title,documents}) => <section class="skf-home-section skf-document-section" aria-labelledby={id}>
       <h2 id={id}>{title}</h2>
       <ul class="skf-document-list">
